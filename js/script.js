@@ -1881,7 +1881,7 @@ function resLootSophie() {
 } 
 
 function resLootDev() {
-  alert("This code will give you 50-100 Golden Cats! Go Dev!!");
+  alert("This code will give you 50-100 Golden Cats! Go Devs!!");
   const randomAmount = Math.floor(Math.random() * 100) + 50; 
   goldencats += randomAmount;
   alert(`You loot: 
