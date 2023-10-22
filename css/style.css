@@ -1,0 +1,604 @@
+/* IMPORTS //
+////////////////////////////*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+
+* {
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* TEXT AND BODY //
+////////////////////////////*/
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  align-content: center;
+  background-color: black;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: 'Oswald';
+} 
+
+h1 {
+   color: #363025;
+   text-align: left;
+   margin-left: 20px;
+   font-size: 35px;
+   padding: 0px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+h3 {
+  font-size: 25px;
+   color: #f08d86;
+}
+
+p {
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+li {
+  text-align: left;
+}
+
+legend {
+  width:290px;
+  margin-left: calc(50% - 35px - 100px);
+}
+
+fieldset {
+  border-width: 10px;
+  border: #dbaa07 0px groove;
+}
+
+ a {
+  color: black;
+  text-decoration: none;
+
+}
+
+ a:hover{
+  cursor: pointer;
+  color: black;
+}
+
+/* SHOP  //
+////////////////////////////*/
+#ad1, #ad2, #ad3 {
+  display: none;
+  width: 400px;
+  height: 400px;
+}
+#ad1 img, #ad2 img, #ad3 img{
+  width: 400px;
+  height: 400px;
+}
+
+#timeleft1, #timeleft2, #timeleft3 {
+  color: pink;
+  font-size: 15px;
+  position: fixed;
+  margin-right: 10px;
+  width: 70px;
+  height: 27px;
+  margin: 1px;
+  justify-content: flex-start;
+  align-items: right;
+  display: none;
+}
+
+#exe1, #exe2, #exe3 {
+  color: pink;
+  font-size: 15px;
+  position: fixed;
+  margin-right: 10px;
+  width: 70px;
+  height: 27px;
+  margin: 1px;
+  cursor: pointer;
+  justify-content: flex-start;
+  align-items: right;
+  display: none;
+}
+
+#ad {
+  background-color: #ffa600;
+  border-radius: 10%;
+  width: 350px;
+  margin: auto;
+}
+
+#adgold {
+  width: 90px;
+  height: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#adpile {
+  width: 90px;
+  height: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#adbox {
+  width: 90px;
+  height: 90px;
+  margin-top: 10px;
+}
+
+#adchest {
+  width: 90px;
+  height: 90px;
+  margin-top: 10px;
+}
+
+#adtruck {
+  width: 90px;
+  height: 80px;
+  margin-top: 10px;
+}
+
+#adcontainer {
+  display: flex;
+  align-items: center;
+}
+
+#left {
+  margin-right: 20px;
+}
+
+#right {
+  display: flex;
+  margin-right: 10px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#deal {
+  text-align: center;
+  margin-right: 20px;
+  font-size: 25px;
+  width: 100%;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+#deals {
+  text-align: left;
+  margin-right: 20px;
+  font-size: 15px;
+  width: 100%;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+#adsleft {
+  font-weight: 20px;
+}
+
+#shoptime {
+  font-size: 10px;
+}
+
+#shop {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+#show {
+  display: flex; 
+  position: fixed;
+  background-color: white;
+  border-radius: 40%;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: right;
+  margin-right: 10px;
+  width: 70px;
+  height: 27px;
+  margin: 1px;
+  cursor: pointer;
+}
+
+#show img {
+  margin-bottom: 10px;
+  margin-left: 18px; 
+  width: 27px;
+  height: 20px;
+}
+
+#goldtext {
+  flex-grow: 1; 
+  margin-top: 5px;
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+
+#exe {
+  cursor: pointer;
+  display: flex; 
+  position: absolute;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+/* HISTORY  //
+////////////////////////////*/
+
+#history {
+  color: #06285e;
+  list-style-type: none;
+  font-weight: 20px;
+}
+
+#time {
+  color: #363025;
+  font-size: 22px;
+}
+
+#adds {
+  list-style-type: square;
+  font-size: 15px;
+  color: #363025;
+  opacity: 1;
+  text-align: left;
+}
+
+/* BUY STUFF //
+////////////////////////////*/
+#upgradesClick, #upgradesIdle {
+  height: 100px;
+  color: darkred;
+  list-style-type: none;
+  background-image: url("media/backgrounds/labbord.png");
+  background-size: 270px;
+  padding-top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  margin-right: 28px;
+  color: black;
+  text-align: center;
+  display: none;
+}
+
+#poplitSelect, #backSelect {
+  height: 100px;
+  color: darkred;
+  list-style-type: none;
+  background-image: url("media/backgrounds/crestbord.png");
+  background-size: 270px;
+  padding-top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  margin-right: 28px;
+  color: black;
+  text-align: center;
+  display: none;
+}
+
+#lab {
+  height: 100px;
+  color: darkred;
+  list-style-type: none;
+  background-image: url("media/backgrounds/labbord.png");
+  background-size: 300px;
+  padding-top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  margin-right: 28px;
+  color: black;
+  text-align: center;
+  display: none;
+}
+
+#crest {
+  height: 100px;
+  color: darkred;
+  list-style-type: none;
+  background-image: url("media/backgrounds/crestbord.png");
+  background-size: 300px;
+  padding-top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  margin-right: 28px;
+  color: black;
+  text-align: center;
+}
+
+#store1, #store2, #store3, #store4, #store5, #store6, #store7, #store8, #store9, #store10, #store11, #store12, #store13, #store14 {
+  height: 100px;
+  color: darkred;
+  list-style-type: none;
+  background-image: url("media/backgrounds/bord.png");
+  background-size: 270px;
+  padding-top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  margin-right: 28px;
+  color: black;
+  text-align: center;
+  display: none;
+}
+
+#rack, #rackTwo, #rackThree, #rackFour, #rackFive, #rackSix, #rackSeven, #rackEight, #rackNine, #rackTen, #rackEleven, #rackTwelve, #rackThirteen, #rackForteen, #rackFifteen, #rackSixteen, #labRes, #powerDub, #idleDub, #poplitDub, #themeDub, #crestDub {
+  list-style-type: none;
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  margin-right: 40px;
+}
+
+#game {
+  border: #dbaa07 10px groove;
+  align-content: center;
+  margin: auto;
+  background-image: url("media/backgrounds/defBack.jpeg");
+  background-repeat: repeat;
+  background-size: 500px;
+  width: 360px;
+  align-self: center;
+}
+
+select {
+  
+}
+
+/* IMAGES AND STUFF //
+////////////////////////////*/
+img {
+  padding-top: 5px;
+  height: 50px;
+  width: 60px;
+}
+
+#labpic {
+  height: 40px;
+  width: 50px;
+  padding-top: 1.5vw;
+  padding-right: 1vw;
+}
+
+#poplitImg {
+  height: 40px;
+  width: 50px;
+  padding-top: 12px;
+  padding-right: 0.05vw;
+}
+
+#coin {
+  height: 130px;
+  width: 130px;
+
+}
+
+.coin-image {
+  height: 130px;
+  width: 130px;
+}
+
+#ukPic {
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+}
+
+#achPicOne, #unAch {
+  height: 45px;
+  width: 45px;
+  border: 5px gold groove;
+}
+
+/* Pinter style 
+\\\\\\\\\\\\\\\\\\\\\\\\\ */
+#printerName{
+  height: 100px;
+  width: 100px;
+  border-radius: 0%;
+  text-align: center;
+  font-size: 25px;
+}
+#printerName:active{
+  border: 5px grove black;
+}
+#printerName:hover{
+  cursor: default;
+}
+ 
+#printer {
+  padding-top: 30px;
+  background-position: center;
+  background-image: url("media/backgrounds/woodsourse.png");
+  background-size: 400px;
+  background-repeat: no-repeat;
+  margin-left: 3px;
+}
+
+/* BUTTON //
+////////////////////////////*/
+button:hover{
+  cursor: pointer;
+}
+button:active{
+  border: 5px grove #000;
+  background: #ffdc76;
+  box-shadow: 0px 2px #a6563c;
+  transform: translateY(4px);
+}
+button:focus {
+  outline:0;
+}
+
+
+/* TABS ORG // 
+////////////////////////////*/
+input { display: none; }              
+input + label { display: inline-block } 
+input ~ .tab { display: none }        
+/*  contents  */
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3,
+#tab4:checked ~ .tab.content4,
+#tab6:checked ~ .tab.content6 { display: block; }
+input + label {             /* box rounded corner */
+  border: 1px solid #999;
+  background: #ff4d94;
+  padding: 4px 12px;
+  border-radius: 10%;
+  position: relative;
+  top: 1px;
+  align-content: center;
+  font-size: 13px;
+}
+input:checked + label {     /* background for tab */
+  background: #ffb8d4;
+  border-bottom: 1px solid transparent;
+}
+input ~ .tab {          /*  line between tab */
+  border-top: 5px solid #999;
+  padding: 12px;
+}
+
+/* TOOLTIP STYLES // 
+////////////////////////////*/
+.tooltip {
+  position: relative;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #ffdc76;
+  border: #a57123 3px groove;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 125%;
+  left: 30%;
+  color: Indigo;
+  font-size: 14px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #c57123 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.labtooltip {
+  position: relative;
+}
+
+.labtooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #9dfcfa;
+  border: #007d79 3px groove;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 125%;
+  left: 30%;
+  color: Indigo;
+  font-size: 14px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.labtooltip .labtooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #007d79 transparent transparent transparent;
+}
+
+.labtooltip:hover .labtooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cresttooltip {
+  position: relative;
+}
+
+.cresttooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #ffbe33;
+  border: #5e4000 3px groove;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 125%;
+  left: 30%;
+  color: Indigo;
+  font-size: 14px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cresttooltip .cresttooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #5e4000 transparent transparent transparent;
+}
+
+.cresttooltip:hover .cresttooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
