@@ -1220,7 +1220,7 @@ window.onload = function () {
     cost15 = savedData.cost15 || 1000000000000000000000000000000000000;
     cost16 = savedData.cost16 || 1000000000000000000000000000000000000000;
     cost17 = savedData.cost17 || 1000000000000000000000000000000000000000000;
-    used = savedData.used || false;
+    usedSophie = savedData.usedSophie || false;
     heros = savedData.heros || 0;
 
   }
@@ -1285,7 +1285,7 @@ setInterval(function() {
     cost15: cost15,
     cost16: cost16,
     cost17: cost17,
-    used: used,
+    usedSophie: usedSophie,
     heros: heros,
   };
   localStorage.setItem('savedData', JSON.stringify(data));
@@ -1846,19 +1846,19 @@ function crestKill() {
 }
 
 
-let used = false;
+let usedSophie = false;
 
 function redeemcode() {
   const code = prompt("Enter code:");
   if (code === "sophie4socal" && !used) {
     used = true;
-    resLoot();
+    resLootSophie();
   } else {
     alert("This code has already been redeemed!");
   }
 }
 
-function resLoot() {
+function resLootSophie() {
   alert("Congratulations, you've redeemed the code!");
   alert("This code will give you 1-15 Golden Cats and 1 legendary cat");
   const randomAmount = Math.floor(Math.random() * 15) + 1; 
@@ -1874,8 +1874,6 @@ function resLoot() {
 
 
 
-function addRandomGoldencats() {
- 
-}
+
 
 
