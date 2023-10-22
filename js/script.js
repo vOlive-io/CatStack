@@ -1149,7 +1149,8 @@ function resetGame() {
         cost16 = 1000000000000000000000000000000000000000;
         cost17 = 1000000000000000000000000000000000000000000;
         heros = 0;
-        used = false;
+        usedSophie = false;
+        usedDev = false;
         console.log("Game successfully reset!");
         location.reload();
     } else {
@@ -1221,6 +1222,7 @@ window.onload = function () {
     cost16 = savedData.cost16 || 1000000000000000000000000000000000000000;
     cost17 = savedData.cost17 || 1000000000000000000000000000000000000000000;
     usedSophie = savedData.usedSophie || false;
+    usedDev = savedData.usedDev || false;
     heros = savedData.heros || 0;
 
   }
@@ -1286,6 +1288,7 @@ setInterval(function() {
     cost16: cost16,
     cost17: cost17,
     usedSophie: usedSophie,
+    usedDev: usedDev,
     heros: heros,
   };
   localStorage.setItem('savedData', JSON.stringify(data));
@@ -1847,20 +1850,26 @@ function crestKill() {
 
 
 let usedSophie = false;
+let usedDev = false;
 
 function redeemcode() {
   const code = prompt("Enter code:");
-  if (code === "sophie4socal" && !used) {
-    used = true;
+  if (code === "sophie4socal" && !usedSophie) {
+    usedSophie = true;
     resLootSophie();
   } else {
+     if (code === "dev" && !usedDev) {
+       usedDev = true;
+       resLootDev();
+    } else {
     alert("This code has already been redeemed!");
   }
 }
+}
+
 
 function resLootSophie() {
-  alert("Congratulations, you've redeemed the code!");
-  alert("This code will give you 1-15 Golden Cats and 1 legendary cat");
+  alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
   const randomAmount = Math.floor(Math.random() * 15) + 1; 
   goldencats += randomAmount;
   heros = heros + 1;
@@ -1869,9 +1878,16 @@ function resLootSophie() {
         1 Legendary: Shopie!    
         Total goldencats: ${goldencats}     
         Total legendarys: ${heros}` );    
-
 } 
 
+function resLootDev() {
+  alert("This code will give you 50-100 Golden Cats! Go Dev!!");
+  const randomAmount = Math.floor(Math.random() * 100) + 50; 
+  goldencats += randomAmount;
+  alert(`You loot: 
+        ${randomAmount} Golden Cats!     
+        Total goldencats: ${goldencats}` );    
+} 
 
 
 
