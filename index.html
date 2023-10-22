@@ -1,0 +1,316 @@
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="KitCoin.png"/>
+
+<script src="js/script.js"></script>
+<audio id="MeowSon">
+   <source src="meow.ogg" type="audio/ogg">
+   <source src="meow.mp3" type="audio/mpeg">
+   Your browser does not support the audio element
+</audio>
+<audio id="Click">
+   <source src="click.mp3" type="audio/mpeg">
+   Your browser does not support the audio element
+</audio>
+<audio id="buy">
+   <source src="chcing.ogg" type="audio/ogg">
+   Your browser does not support the audio element
+</audio>
+<title id="tit">0 Cats - Catstack</title>
+</head>
+<body>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1"><p id="exe1" onclick="exe()">x</p><p id="timeleft1">30s</p>
+<div id="ad1"><img id="ads1x" src="css/media/ads/ad1.png">
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"><p id="exe2" onclick="exe()">x</p><p id="timeleft2">30s</p>
+<div id="ad2"><img id="ads2x" src="css/media/ads/ad2.png">
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"><p id="exe3" onclick="exe()">x</p><p id="timeleft3">30s</p>
+<div id="ad3"><img id="ads3x" src="css/media/ads/ad3.png">
+</div>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="shop"><div id="ad"><p id="exe" onclick="hideshop()">x</p>
+  <br>
+<h1 id="deal">Daily Deals</h1>
+<br>
+<h1 id="deals">Halloween Collection <b id="shoptime">(Ends In: --:--:--:--)</b></h1>
+<br>
+
+<h1 id="deals">Golden Cats</h1>
+<div id="adcontainer">
+  <div id="left">
+    <img onclick="showAdd()" id="adgold" src="css/media/money/golden.png">
+  </div>
+  <div id="right">
+<h2 id="adclick">1 Golden Cat</h2>
+
+<p>Times left: <b id="adsleft">1</b> --- Watch an ad to get one golden cat. Golden cats are used to buy power-ups, exclusive poplits, and rare exclusive cats.</p>
+  </div>
+</div>
+<div id="adcontainer">
+  <div id="left">
+    <img id="adpile" src="css/media/money/goldenpile.png">
+  </div>
+  <div id="right">
+<h2>5 Golden Cats</h2>
+<p>Text for purchase gose here. Golden cats are used to buy power-ups, exclusive poplits, and rare exclusive cats.</p>
+  </div>
+</div>
+<br>
+<div id="adcontainer">
+  <div id="left">
+    <img id="adbox" src="css/media/money/goldenbox.png">
+  </div>
+  <div id="right">
+<h2>50 Golden Cats</h2>
+<p>Text for purchase gose here. Golden cats are used to buy power-ups, exclusive poplits, and rare exclusive cats.</p>
+  </div>
+</div>
+<div id="adcontainer">
+  <div id="left">
+    <img id="adchest"  src="css/media/money/goldenchest.png">
+  </div>
+  <div id="right">
+<h2>500 Golden Cats</h2>
+<p>Text for purchase gose here. Golden cats are used to buy power-ups, exclusive poplits, and rare exclusive cats./p>
+  </div>
+</div>
+<br>
+<div id="adcontainer">
+  <div id="left">
+    <img id="adtruck" src="css/media/money/goldentruck.png">
+  </div>
+  <div id="right">
+<h2>5000 Golden Cats</h2>
+<p>Text for purchase gose here.Golden cats are used to buy power-ups, exclusive poplits, and rare exclusive cats.</p>
+  </div>
+</div>
+<br>
+<button id="redeem" onclick="redeemcode()">Redeem Code</button>
+</div>
+</div>
+
+  <div id="sizeCom">
+   <i>Your screen size is to big, try <b>resizing</b> your window or <b>rotating</b> you device. Your current screen size is <b id="size">--</b> It needs to be <b>516px</b> or smaller.</i>
+   <br><br><img src="css/media/popup/!.png" ><br><br><br><br><br><br></div>
+
+
+<div id="game">
+
+<a onclick="loadshop()" id="show" href="#shop">
+  <div id="goldtext"><p>10</p></div><br>
+  <img id="gold" src="css/media/money/golden.png" width="15"  height="15">
+</a>
+
+  <div id="printer" class="printer"><br><br><a id="printerName">Print Money</a><br><br><br></div><br><br>
+  <a onclick="play()" id="coin"><img id="coin" src="kitCoin.png"></a><br><br>
+  <div class="tooltip"><span class="tooltiptext">???</span></div>
+
+<ul>
+  <li onclick="normalcatbuy()" id="store1" class="tooltip"><img src="css/media/icons/cat.png"><t id="normalcat"> Cats (0) </t><ul><li id="rack">$15</li></ul>
+  <span class="tooltiptext">A nice little cat to find some Kit Coins.<br>
+   <i>“Who could'nt love this lil' fellow”</i></span></li>
+
+  <li onclick="farmercatbuy()" id="store2" class="tooltip"><img src="css/media/icons/farmercat.png"><t id="farmercat"> ??? Cats (0) </t><ul><li id="rackTwo">$100</li></ul>
+  <span class="tooltiptext">Farm fresh Kit Coins for you to enjoy.<br>
+   <i>“Farming isn't for everycat, but hay it's in my jeans”</i></span></li>
+
+
+  <li onclick="minercatbuy()" id="store3" class="tooltip"><img src="css/media/icons/minercat.png"><t id="minercat">??? Cats (0) </t><ul><li id="rackThree">$1K</li></ul>
+   <span class="tooltiptext">Mines Kit Coin ore just for you.<br>
+  <i>You mine or get mined, thats how it is down here”</i></span></li>
+
+  <li onclick="workercatbuy()" id="store4" class="tooltip"><img src="css/media/icons/workercat.png"><t id="workercat">??? Cats (0) </t><ul><li id="rackFour">$500K</li></ul>
+  <span class="tooltiptext">Produces large amounts of Kit Coin from the kit factory.<br>
+  <i>“Todays agenda: Make Kit Coins, Make some more, keep going....”</i></span></li>
+
+
+  <li onclick="bankercatbuy()" id="store5" class="tooltip"><img src="css/media/icons/bankercat.png"><t id="bankercat">??? Cats (0) </t><ul><li id="rackFive">$1 Million</li></ul>
+   <span class="tooltiptext">Generates Kit Coin from interest.<br>
+  <i>“Cats and wealth are two sides of the same coin.”</i></span></li>
+
+   <li onclick="alchemistcatbuy()" id="store6" class="tooltip"><img src="css/media/icons/alchemistcat.png"><t id="alchemistcat">??? Cats (0) </t><ul><li id="rackSix">$1 Billion</li></ul>
+   <span class="tooltiptext">Turns metal into Kit Coin.<br>
+  <i>“Put the gold here and the Uranium here and then the wate-BOOM!!”</i></span></li>
+
+<br><br>
+
+  <li onclick="research()" id="lab" class="labtooltip"><img src="css/media/icons/lab.png" id="labpic"><t id="clickDuby"> Lab </t><ul><li id="labRes">Reasarch for 10K</li></ul>
+   <span class="labtooltiptext">Research new techs and powerups!<br>
+  <i>“The laboratory is the temple of the soul of the cats"</i></span></li>
+
+
+  <li onclick="buyClickPower()" id="upgradesClick" class="labtooltip"><img src="css/media/icons/click.png"><t id="clickDuby"> Click Power</t><ul><li id="powerDub">$10K</li></ul>
+   <span class="labtooltiptext">Doubles you clicking power.<br>
+  <i>“Thats finger click'n good!”</i></span></li>
+
+    <li onclick="buyInsPower()" id="upgradesIdle" class="labtooltip"><img src="css/media/icons/click.png"><t id="idleDuby"> Idle Power</t><ul><li id="idleDub">$1 Millon</li></ul>
+   <span class="labtooltiptext">Doubles you idle power.<br>
+  <i>“This is speedmate, real speed.”</i></span></li>
+
+<br><br>
+
+    <li id="crest" class="cresttooltip"><img id="crestImg" src="css/media/icons/icon.png"><t id="crestDuby">Crest Options</t><ul><li id="crestDub"></li></ul>
+   <span class="cresttooltiptext">The menu for all unlocked crest options<br>
+  <i>“The space of ascending is magic, now what is the place of transcending?”</i></span></li>
+
+
+    <li id="poplitSelect" class="cresttooltip"><img id="labpic" src="css/media/poplits/prism.png"><t id="popDuby"> Poplit select</t><ul><li id="poplitDub">Curent poplit: 
+<select id=poplitSelectStyle>
+    <option>Automatic</option>
+    <option>Normal</option>
+    <option disabled>Raspberry</option>
+    <option disabled>Orange</option>
+    <option disabled>Banana</option>
+    <option disabled>Lime</option>
+    <option disabled>Blueberry</option>
+    <option disabled>Grape</option>
+    <option disabled>Pomegranate</option>
+    <option disabled>Maple</option>
+    <option disabled>Mango</option>
+    <option disabled>Tea</option>
+    <option disabled>Coconut</option>
+    <option disabled>Peppermint</option>
+    <option disabled>Dragonfruit</option>
+    <option disabled>Golden</option>
+    <option>Prism</option>
+</select></li></ul>
+   <span class="cresttooltiptext">Allows you to select which poplet to display.<br>
+  <i>“Being able to choose your flavor is a privilege, to all cats, use it wisely”</i></span></li>
+
+    <li id="backSelect" class="cresttooltip"><img id="poplitImg" src="css/media/icons/back.png"><t id="backDuby"> Baground select</t><ul><li id="poplitDub">Curent background: 
+<select id=backSelectStyle>
+    <option>Default</option>
+    <option>Red</option>
+    <option>Orange</option>
+    <option>Yellow</option>
+    <option>Lime</option>
+    <option>Blue</option>
+    <option>Purple</option>
+    <option>Pink</option>
+    <option>Prism</option>
+</select></li></ul>
+   <span class="cresttooltiptext">Allows you to select which background to display.<br>
+  <i>“Do you ever wonder where you are, or where these wallpapers are going?”</i></span></li>
+</ul>
+
+ <div id="royalSelect"></div>
+ <div id="killSelect"></div>
+
+
+<br><br>
+<fieldset>
+<legend><h1>Version History</h1></legend>
+<ul>
+ <li id="history"><b>10/2/2023 - Immersive Js!</b><ul>
+   <li id="adds">Added Coder Cats</li> 
+   <li id="adds">Added Multitasker Cats</li> 
+   <li id="adds">Added Catspawn</li> 
+   <li id="adds">Remade idle income</li> 
+   <li id="adds">Added 363 new numbers (number count hit 402!)</li> 
+ </ul></li><br>
+
+ <li id="history"><b>8/1/2023 - As Luck Would Have It!</b><ul>
+   <li id="adds">Added Lucky Cats</li> 
+   <li id="adds">Added a Background</li> 
+   <li id="adds">Added 11 new numbers</li> 
+ </ul></li><br>
+
+<h1 id="time">Public Access 10/12/2023</h1>
+
+ <li id="history"><b>7/15/2023 - Nothing New!</b><ul>
+   <li id="adds">Added Anti Cats</li> 
+   <li id="adds">Added Wipe</li> 
+   <li id="adds">Added 7 new numbers</li> 
+ </ul></li><br>
+
+ <li id="history"><b>7/5/2023 - More Than It Seems!</b><ul>
+   <li id="adds">Added Illusionist Cats</li> 
+   <li id="adds">Added Actual Assets</li> 
+   <li id="adds">Added 11 new numbers</li> 
+ </ul></li><br>
+
+    <li id="history"><b>6/23/2023 - A Whole New World!</b><ul>
+   <li id="adds">Added Gatekeeper Cats</li> 
+   <li id="adds">Added Astronaut Cats</li> 
+   <li id="adds">Added 10 new numbers</li> 
+ </ul></li><br>
+
+
+ <li id="history"><b>3/10/2023 - Cats In Numbers!</b><ul>
+   <li id="adds">Added Smart Cats</li> 
+   <li id="adds">Added Poplits</li> 
+   <li id="adds">Added Suffix and Number Counting</li> 
+ </ul></li><br>
+
+ <h1 id="time">Early Access 1/6/2023</h1>
+
+ <li id="history"><b>1/6/2023 - Cat Philosophy!</b><ul>
+   <li id="adds">Added Banker Cats</li> 
+   <li id="adds">Added Alchemist Cats</li> 
+   <li id="adds">Added Priest Cats</li> 
+   <li id="adds">Added Version history</li> 
+ </ul></li><br>
+
+ <h1 id="time">Happy New Year, 2023! :D</h1>
+
+ <li id="history"><b>9/5/2022 - Game Launch!</b><ul>
+   <li id="adds">Started with only Cat, Farmer Cats, and Worker Cats</li> 
+   <li id="adds">Nothing special</li> 
+ </ul></li><br>
+
+</ul>
+</fieldset>
+
+</div>
+
+  <button id="adder" onclick="dev()">≽^•⩊•^≼</button></td>
+   <button id="reTrain" onclick="resetGame()">Wipe</button>
+  <button id="reTrain" onclick="exportFromSave()">Export</button>
+ <button id="reTrain" onclick="importFromSave()">Import</button>
+</ul>
+</div>
+</body>
+<script>
+   let audElem = document.getElementById('MeowSon');
+   let audElemClick = document.getElementById('Click');
+
+
+   function playAudio() {
+      audElem.play();
+   }
+
+
+var num = 1;
+function play(numbers=1) {
+  count+=num;
+  clicks+=num;
+  let displayCount = count;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    }
+  }
+  printerName.innerHTML = "You have $" + displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  audElemClick.play();
+  checkAchievements();
+  format();
+}
+</script>
+<br><br><br>
+
+
+
