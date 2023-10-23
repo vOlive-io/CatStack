@@ -14,11 +14,11 @@ window.addEventListener('load', checkScreenSize);
 window.addEventListener('load', timer);
 window.addEventListener('load', startgame);
 window.addEventListener('resize', checkScreenSize);
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const select = document.getElementById("poplitSelectStyle");
   select.addEventListener("change", getSelected);
 });
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const select = document.getElementById("backSelectStyle");
   select.addEventListener("change", getSelected);
 });
@@ -40,8 +40,8 @@ function loadshop() {
 
 var time = 3600000; // time variable - can be edited
 
-setInterval(function() {
-  allow += 1; 
+setInterval(function () {
+  allow += 1;
   console.log("allow is now ${allow}");
 }, time);
 
@@ -158,7 +158,7 @@ var poplits = {
   normal: {
     level: ["I"],
   },
-  
+
   raspberry: {
     level: ["II"],
   },
@@ -207,7 +207,7 @@ var poplits = {
     level: ["XIII"],
   },
 
-   dragonfruit: {
+  dragonfruit: {
     level: ["XIV"],
   },
 }
@@ -628,20 +628,20 @@ function hideshop() {
   document.getElementById("show").style.display = "flex";
 }
 function showAdd() {
-  if (allow>0) {
-  const ads = [ad1, ad2, ad3];
-  const selectedAd = ads[Math.floor(Math.random() * ads.length)];
-  selectedAd();
-  purch = purch + 1;
-  allow = allow - 1;
-  document.getElementById("shop").style.display = "none";
- setTimeout(() => {
+  if (allow > 0) {
+    const ads = [ad1, ad2, ad3];
+    const selectedAd = ads[Math.floor(Math.random() * ads.length)];
+    selectedAd();
+    purch = purch + 1;
+    allow = allow - 1;
+    document.getElementById("shop").style.display = "none";
+    setTimeout(() => {
       canRun = true;
     }, 5000); // the cooldown time is set to 5000ms (5 seconds)
-}
- else {
-  alert("You are out of ad tokens, get more by redeeming them through codes, or waiting 24 hours and you will get one.")
-}
+  }
+  else {
+    alert("You are out of ad tokens, get more by redeeming them through codes, or waiting 24 hours and you will get one.")
+  }
 }
 
 
@@ -650,7 +650,7 @@ function ad1() {
   document.getElementById("ad1").style.display = "block";
   document.getElementById("timeleft1").style.display = "flex";
   let timeLeft = 29; // 60 seconds
-  let timer = setInterval(function() {
+  let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
       document.getElementById("exe1").style.display = "flex";
@@ -669,7 +669,7 @@ function ad2() {
   document.getElementById("ad2").style.display = "block";
   document.getElementById("timeleft2").style.display = "flex";
   let timeLeft = 29; // 60 seconds
-  let timer = setInterval(function() {
+  let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
       document.getElementById("exe2").style.display = "flex";
@@ -688,7 +688,7 @@ function ad3() {
   document.getElementById("ad3").style.display = "block";
   document.getElementById("timeleft3").style.display = "flex";
   let timeLeft = 29; // 60 seconds
-  let timer = setInterval(function() {
+  let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
       document.getElementById("exe3").style.display = "flex";
@@ -702,20 +702,20 @@ function ad3() {
   }, 1000); // interval set to 1000ms or 1 second
 }
 
-  function exe() {
-    goldencats = goldencats + 1;
-    document.getElementById("ad1").style.display = "none";
-    document.getElementById("timeleft1").style.display = "none";
-    document.getElementById("exe1").style.display = "none";
-    document.getElementById("ad2").style.display = "none";
-    document.getElementById("timeleft2").style.display = "none";
-    document.getElementById("exe2").style.display = "none";
-    document.getElementById("ad3").style.display = "none";
-    document.getElementById("timeleft3").style.display = "none";
-    document.getElementById("exe3").style.display = "none";
-    document.getElementById("game").style.display = "block";
+function exe() {
+  goldencats = goldencats + 1;
+  document.getElementById("ad1").style.display = "none";
+  document.getElementById("timeleft1").style.display = "none";
+  document.getElementById("exe1").style.display = "none";
+  document.getElementById("ad2").style.display = "none";
+  document.getElementById("timeleft2").style.display = "none";
+  document.getElementById("exe2").style.display = "none";
+  document.getElementById("ad3").style.display = "none";
+  document.getElementById("timeleft3").style.display = "none";
+  document.getElementById("exe3").style.display = "none";
+  document.getElementById("game").style.display = "block";
   document.getElementById("show").style.display = "flex";
-  }
+}
 
 
 
@@ -734,7 +734,7 @@ function timer() {
 
 // Call the function every second
 
-  
+
 
 function format() {
   if (count < 1000) {
@@ -756,34 +756,34 @@ function format() {
 }
 
 function update() {
-    goldtext.innerHTML = goldencats;
-    adsleft.innerHTML = allow;
-    normalcat.innerHTML = " Cats (" + normalcats + ")";
-    if (farmercats>0) {
-          document.getElementById("store2").style.display = "block";
-          document.getElementById("store3").style.display = "block";
-    }
-    farmercat.innerHTML = " Farmer Cats (" + farmercats + ")";
-    if (minercats>0) {
-          document.getElementById("store3").style.display = "block";
-          document.getElementById("store4").style.display = "block";
-    }
-    minercat.innerHTML = " Miner Cats (" + minercats + ")";
-    if (workercats>0) {
-          document.getElementById("store4").style.display = "block";
-          document.getElementById("store5").style.display = "block";
-    }
-    workercat.innerHTML = " Worker Cats (" + workercats + ")";
-    if (bankercats>0) {
-          document.getElementById("store5").style.display = "block";
-          document.getElementById("store6").style.display = "block";
-    }
-    bankercat.innerHTML = " Banker Cats (" + bankercats + ")";
-    if (alchemistcats>0) {
-          document.getElementById("store6").style.display = "block";
-          document.getElementById("store6").style.display = "block";
-    }
-    alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
+  goldtext.innerHTML = goldencats;
+  adsleft.innerHTML = allow;
+  normalcat.innerHTML = " Cats (" + normalcats + ")";
+  if (farmercats > 0) {
+    document.getElementById("store2").style.display = "block";
+    document.getElementById("store3").style.display = "block";
+  }
+  farmercat.innerHTML = " Farmer Cats (" + farmercats + ")";
+  if (minercats > 0) {
+    document.getElementById("store3").style.display = "block";
+    document.getElementById("store4").style.display = "block";
+  }
+  minercat.innerHTML = " Miner Cats (" + minercats + ")";
+  if (workercats > 0) {
+    document.getElementById("store4").style.display = "block";
+    document.getElementById("store5").style.display = "block";
+  }
+  workercat.innerHTML = " Worker Cats (" + workercats + ")";
+  if (bankercats > 0) {
+    document.getElementById("store5").style.display = "block";
+    document.getElementById("store6").style.display = "block";
+  }
+  bankercat.innerHTML = " Banker Cats (" + bankercats + ")";
+  if (alchemistcats > 0) {
+    document.getElementById("store6").style.display = "block";
+    document.getElementById("store6").style.display = "block";
+  }
+  alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
 }
 
 ///////////////////////////////////
@@ -791,23 +791,23 @@ function update() {
 ///////////////////////////////////
 
 function idle(numbers = 1) {
-  count+=normalIns;
-  count+=farmerIns;
-  count+=minerIns;
-  count+=workerIns;
-  count+=bankerIns;
-  count+=alchemistIns;
-  count+=astronautIns;
-  count+=priestIns;
-  count+=mageIns;
-  count+=gatekeeperIns;
-  count+=antiIns;
-  count+=luckyIns;
-  count+=illusionistIns;
-  count+=coderIns;
-  count+=mutiIns;
-  count+=spawnIns;
-  count+=cloneIns;
+  count += normalIns;
+  count += farmerIns;
+  count += minerIns;
+  count += workerIns;
+  count += bankerIns;
+  count += alchemistIns;
+  count += astronautIns;
+  count += priestIns;
+  count += mageIns;
+  count += gatekeeperIns;
+  count += antiIns;
+  count += luckyIns;
+  count += illusionistIns;
+  count += coderIns;
+  count += mutiIns;
+  count += spawnIns;
+  count += cloneIns;
   let displayCount = count;
   for (let i = suffixes.length - 1; i >= 1; i--) {
     const limit = Math.pow(10, i * 3);
@@ -828,210 +828,216 @@ function idle(numbers = 1) {
 
 //normalcat,farmercat,workercat,bankercat,alchemistcat,astronautcat,priestcat,magecat,gatekeepercat,inticat,luckycat,illusionistcat,codercat,mulitaskercat,catspawn,clone
 //////////////////     BASIC CAT     ////////////////////
-function normalcatbuy(){
-  if (count<cost1) {}
-  if (count>=cost1) {
-    count-=cost1;
+function normalcatbuy() {
+  if (count < cost1) { }
+  if (count >= cost1) {
+    count -= cost1;
     normalIns = normalIns + addnormalIns;
     normalcats = normalcats + 1;
     cost1 = Math.round(cost1 * 1.2);
     console.log(cost1);
     document.getElementById("store2").style.display = "block";
     normalcat.innerHTML = " Cats (" + normalcats + ")";
-     //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-       //cost insurance
-  let displayCost1 = cost1;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (cost1 >= limit) {
-      displayCost1 = (cost1 / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  rack.innerHTML = " $" + displayCost1;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
-  format();
+    //cost insurance
+    let displayCost1 = cost1;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (cost1 >= limit) {
+        displayCost1 = (cost1 / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    rack.innerHTML = " $" + displayCost1;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    format();
   }
+}
 //////////////////     FARMER CAT     ///////////////////  
-function farmercatbuy(){
-  if (count<cost2){}
-  if (count>=cost2) {
-    count-=cost2;
+function farmercatbuy() {
+  if (count < cost2) { }
+  if (count >= cost2) {
+    count -= cost2;
     farmerIns = farmerIns + addfarmerIns;
     farmercats = farmercats + 1;
     cost2 = Math.round(cost2 * 1.2);
-    console.log(cost2);   
+    console.log(cost2);
     document.getElementById("store3").style.display = "block";
     farmercat.innerHTML = " Farmer Cats (" + farmercats + ")";
     //count insurance
-           let displayCount = count;
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-       //cost insurance
-  let displayCost2 = cost2;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (cost2 >= limit) {
-      displayCost2 = (cost2 / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  rackTwo.innerHTML = " $" + displayCost2;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
-  format();
+    //cost insurance
+    let displayCost2 = cost2;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (cost2 >= limit) {
+        displayCost2 = (cost2 / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    rackTwo.innerHTML = " $" + displayCost2;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    format();
   }
+}
 //////////////////     MINER CAT   /////////////////////
-function minercatbuy(){
-  if (count<cost3){}
-  if (count>=cost3) {
-    count-=cost3;
+function minercatbuy() {
+  if (count < cost3) { }
+  if (count >= cost3) {
+    count -= cost3;
     minerIns = minerIns + addminerIns;
     minercats = minercats + 1;
     cost3 = Math.round(cost3 * 1.2);
     console.log(cost3);
     document.getElementById("store4").style.display = "block";
     minercat.innerHTML = " Miner Cats (" + minercats + ")";
- //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-     //cost insurance
-  let displayCost3 = cost3;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (cost3 >= limit) {
-      displayCost3 = (cost3 / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  rackThree.innerHTML = " $" + displayCost3;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
-  format();
+    //cost insurance
+    let displayCost3 = cost3;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (cost3 >= limit) {
+        displayCost3 = (cost3 / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    rackThree.innerHTML = " $" + displayCost3;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    format();
   }
+}
 
 //////////////////     WORKER CAT   /////////////////////
-function workercatbuy(){
-  if (count<cost4){}
-  if (count>=cost4) {
-    count-=cost4;
+function workercatbuy() {
+  if (count < cost4) { }
+  if (count >= cost4) {
+    count -= cost4;
     workerIns = workerIns + addworkerIns;
     workercats = workercats + 1;
     cost4 = Math.round(cost4 * 1.2);
     console.log(cost4);
     document.getElementById("store5").style.display = "block";
     workercat.innerHTML = " Worker Cats (" + workercats + ")";
- //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-     //cost insurance
-  let displayCost4 = cost4;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (cost4 >= limit) {
-      displayCost4 = (cost4 / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  rackFour.innerHTML = " $" + displayCost4;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
-  format();
+    //cost insurance
+    let displayCost4 = cost4;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (cost4 >= limit) {
+        displayCost4 = (cost4 / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    rackFour.innerHTML = " $" + displayCost4;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    format();
   }
+}
 //////////////////     BANKER CAT   /////////////////////
-function bankercatbuy(){
-  if (count<cost5){}
-  if (count>=cost5) {
-    count-=cost5;
+function bankercatbuy() {
+  if (count < cost5) { }
+  if (count >= cost5) {
+    count -= cost5;
     bankerIns = bankerIns + addbankerIns;
     bankercats = bankercats + 1;
     cost5 = Math.round(cost5 * 1.2);
     console.log(cost5)
     document.getElementById("store6").style.display = "block";
     bankercat.innerHTML = " Banker Cats (" + bankercats + ")";
-     //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-     //cost insurance
-  let displayCost5 = cost5;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (cost5 >= limit) {
-      displayCost5 = (cost5 / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  rackFive.innerHTML = " $" + displayCost5;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
-  format();
+    //cost insurance
+    let displayCost5 = cost5;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (cost5 >= limit) {
+        displayCost5 = (cost5 / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    rackFive.innerHTML = " $" + displayCost5;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    format();
   }
+}
 //////////////////     ALCHEMIST CAT   //////////////////
-function alchemistcatbuy(){
-  if (count<cost6){}
-  if (count>=cost6) {
-    count-=cost6;
+function alchemistcatbuy() {
+  if (count < cost6) { }
+  if (count >= cost6) {
+    count -= cost6;
     alchemistIns = alchemistIns + addalchemistIns;
     alchemistcats = alchemistcats + 1;
     cost6 = Math.round(cost6 * 1.2);
     console.log(cost6)
     document.getElementById("lab").style.display = "block";
     alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
-     //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-     //cost insurance
-  let displayCost6 = cost6;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (cost6 >= limit) {
-      displayCost6 = (cost6 / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  rackSix.innerHTML = " $" + displayCost6;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
-  format();
+    //cost insurance
+    let displayCost6 = cost6;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (cost6 >= limit) {
+        displayCost6 = (cost6 / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    rackSix.innerHTML = " $" + displayCost6;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    format();
   }
+}
 //////////////////     ASTRONAUT CAT   //////////////////
 //////////////////     PREIST CAT   /////////////////////
 //////////////////     MAGE CAT   ///////////////////////
@@ -1045,7 +1051,7 @@ function alchemistcatbuy(){
 //////////////////     CLONE   //////////////////////////
 //////////////////     SPECIAL FEAT   ///////////////////      
 function dev() {
-  count*=cost1;
+  count *= cost1;
 }
 
 
@@ -1057,7 +1063,7 @@ function checkScreenSize() {
   var screenSize = window.innerWidth;
 
   if (screenSize > 5010) {
-   document.getElementById('game').style.display = 'none';
+    document.getElementById('game').style.display = 'none';
     document.getElementById('sizeCom').style.display = 'block';
     document.getElementById('sizeCom').style.color = 'red';
     size.innerHTML = screenSize + "px ";
@@ -1066,96 +1072,96 @@ function checkScreenSize() {
   }
 }
 function resetGame() {
-    var confirmation = prompt("Are you sure you want to reset the game? Type 'yes' to confirm.");
+  var confirmation = prompt("Are you sure you want to reset the game? Type 'yes' to confirm.");
 
-    if (confirmation.toLowerCase() === "yes") {
-        num = 1;
-        goldencats = 0;
-        allow = 1;
-        count = 0;
-        clicks = 0;
-        numbers = 150;
-        insurance = undefined;
-        normalIns = 0;
-        farmerIns = 0;
-        minerIns = 0;
-        workerIns = 0;
-        bankerIns = 0;
-        alchemistIns = 0;
-        astronautIns = 0;
-        priestIns = 0;
-        mageIns = 0;
-        gatekeeperIns = 0;
-        antiIns = 0;
-        luckyIns = 0;
-        illusionistIns = 0;
-        coderIns = 0;
-        mutiIns = 0;
-        spawnIns = 0;
-        cloneIns = 0;
-        addnormalIns = 0.0005;
-        addfarmerIns = 0.005;
-        addminerIns = 0.05;
-        addworkerIns = 50;
-        addbankerIns = 200;
-        addalchemistIns = 2500;
-        addastronautIns = 250000;
-        addpriestIns = 5000000000;
-        addmageIns = 1;
-        addgatekeeperIns = 1;
-        addantiIns = 1;
-        addluckyIns = 1;
-        addillusionistIns = 1;
-        addcoderIns = 1;
-        addmutiIns = 1;
-        addspawnIns = 1;
-        addcloneIns = 1;
-        txt = undefined;
-        text = undefined;
-        texts = undefined;
-        texting = undefined;
-        normalcats = 0;
-        farmercats = 0;
-        workercats = 0;
-        bankercats = 0;
-        minercats = 0;
-        alchemistcats = 0;
-        astronautcats = 0;
-        catpriest = 0;
-        catmage = 0;
-        gatekeepercats = 0;
-        anticats = 0;
-        luckycats = 0;
-        catillusionist = 0;
-        catcoders = 0;
-        catmultitaskers = 0;
-        catspawn = 0;
-        clone = 0;
-        cost1 = 15;
-        cost2 = 100;
-        cost3 = 1000;
-        cost4 = 500000;
-        cost5 = 1000000;
-        cost6 = 1000000000;
-        cost7 = 1000000000000;
-        cost8 = 1000000000000000;
-        cost9 = 1000000000000000000;
-        cost10 = 1000000000000000000000;
-        cost11 = 1000000000000000000000000;
-        cost12 = 1000000000000000000000000000;
-        cost13 = 1000000000000000000000000000000;
-        cost14 = 1000000000000000000000000000000000;
-        cost15 = 1000000000000000000000000000000000000;
-        cost16 = 1000000000000000000000000000000000000000;
-        cost17 = 1000000000000000000000000000000000000000000;
-        heros = 0;
-        usedSophie = false;
-        usedDev = false;
-        console.log("Game successfully reset!");
-        location.reload();
-    } else {
-        console.log("Game reset cancelled.");
-    }
+  if (confirmation.toLowerCase() === "yes") {
+    num = 1;
+    goldencats = 0;
+    allow = 1;
+    count = 0;
+    clicks = 0;
+    numbers = 150;
+    insurance = undefined;
+    normalIns = 0;
+    farmerIns = 0;
+    minerIns = 0;
+    workerIns = 0;
+    bankerIns = 0;
+    alchemistIns = 0;
+    astronautIns = 0;
+    priestIns = 0;
+    mageIns = 0;
+    gatekeeperIns = 0;
+    antiIns = 0;
+    luckyIns = 0;
+    illusionistIns = 0;
+    coderIns = 0;
+    mutiIns = 0;
+    spawnIns = 0;
+    cloneIns = 0;
+    addnormalIns = 0.0005;
+    addfarmerIns = 0.005;
+    addminerIns = 0.05;
+    addworkerIns = 50;
+    addbankerIns = 200;
+    addalchemistIns = 2500;
+    addastronautIns = 250000;
+    addpriestIns = 5000000000;
+    addmageIns = 1;
+    addgatekeeperIns = 1;
+    addantiIns = 1;
+    addluckyIns = 1;
+    addillusionistIns = 1;
+    addcoderIns = 1;
+    addmutiIns = 1;
+    addspawnIns = 1;
+    addcloneIns = 1;
+    txt = undefined;
+    text = undefined;
+    texts = undefined;
+    texting = undefined;
+    normalcats = 0;
+    farmercats = 0;
+    workercats = 0;
+    bankercats = 0;
+    minercats = 0;
+    alchemistcats = 0;
+    astronautcats = 0;
+    catpriest = 0;
+    catmage = 0;
+    gatekeepercats = 0;
+    anticats = 0;
+    luckycats = 0;
+    catillusionist = 0;
+    catcoders = 0;
+    catmultitaskers = 0;
+    catspawn = 0;
+    clone = 0;
+    cost1 = 15;
+    cost2 = 100;
+    cost3 = 1000;
+    cost4 = 500000;
+    cost5 = 1000000;
+    cost6 = 1000000000;
+    cost7 = 1000000000000;
+    cost8 = 1000000000000000;
+    cost9 = 1000000000000000000;
+    cost10 = 1000000000000000000000;
+    cost11 = 1000000000000000000000000;
+    cost12 = 1000000000000000000000000000;
+    cost13 = 1000000000000000000000000000000;
+    cost14 = 1000000000000000000000000000000000;
+    cost15 = 1000000000000000000000000000000000000;
+    cost16 = 1000000000000000000000000000000000000000;
+    cost17 = 1000000000000000000000000000000000000000000;
+    heros = 0;
+    usedSophie = false;
+    usedDev = false;
+    console.log("Game successfully reset!");
+    location.reload();
+  } else {
+    console.log("Game reset cancelled.");
+  }
 }
 
 
@@ -1228,7 +1234,7 @@ window.onload = function () {
   }
 };
 
-setInterval(function() {
+setInterval(function () {
   const data = {
     num: num,
     allow: allow,
@@ -1375,9 +1381,9 @@ function changeCoinImage() {
   let coinImage = "";
   let dropdown = document.getElementById("poplitSelectStyle");
   let selectedOption = dropdown.options[dropdown.selectedIndex].text.toLowerCase();
-  
+
   if (selectedOption === "automatic") {
-        // Check if the current count warrants a higher level
+    // Check if the current count warrants a higher level
     if (totalAch >= 2 && earnedLevel === "normal") {
       earnedLevel = "raspberry";
     }
@@ -1404,7 +1410,7 @@ function changeCoinImage() {
     }
     if (count >= 1000000000000000000 && earnedLevel === "maple") {
       earnedLevel = "mango";
-    }  
+    }
     poplitLevel = earnedLevel;
   } else {
     poplitLevel = selectedOption;
@@ -1508,91 +1514,92 @@ function poplitSelectList() {
   if (count >= 1000000000000000000 && displayLevel === "maple") {
     displayLevel = "mango";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[10].disabled = false;
-  } 
+  }
   return displayLevel;
 }
 
 function wallpaper() {
   let dropdownBack = document.getElementById("backSelectStyle");
   let selectedOptionBack = dropdownBack.options[dropdownBack.selectedIndex].text.toLowerCase();
-  let backImage = ""; 
-    if (selectedOptionBack === "default") {
+  let backImage = "";
+  if (selectedOptionBack === "default") {
   }
   else {
-  switch (selectedOptionBack) {
-    case "default":
-      backImage = "css/media/backgrounds/defBack.jpeg";
-      break;
-    case "red":
-      backImage = "css/media/backgrounds/redBack.jpeg";
-      break;
-    case "orange":
-      backImage = "css/media/backgrounds/orangeBack.jpeg";
-      break;
-    case "yellow":
-      backImage = "css/media/backgrounds/yellowBack.jpeg";
-      break;
-    case "lime":
-      backImage = "css/media/backgrounds/limeBack.jpeg";
-      break;
-    case "blue":
-      backImage = "css/media/backgrounds/blueBack.jpeg";
-      break;
-    case "purple":
-      backImage = "css/media/backgrounds/purpleBack.jpeg";
-      break;
-    case "pink":
-      backImage = "css/media/backgrounds/pinkBack.jpeg";
-      break;
-    case "prism":
-      backImage = "css/media/backgrounds/prismBack.jpeg";
-      break;
-    case "kill":
-      backImage = "css/media/backgrounds/prismBack.jpeg";
-      break;
+    switch (selectedOptionBack) {
+      case "default":
+        backImage = "css/media/backgrounds/defBack.jpeg";
+        break;
+      case "red":
+        backImage = "css/media/backgrounds/redBack.jpeg";
+        break;
+      case "orange":
+        backImage = "css/media/backgrounds/orangeBack.jpeg";
+        break;
+      case "yellow":
+        backImage = "css/media/backgrounds/yellowBack.jpeg";
+        break;
+      case "lime":
+        backImage = "css/media/backgrounds/limeBack.jpeg";
+        break;
+      case "blue":
+        backImage = "css/media/backgrounds/blueBack.jpeg";
+        break;
+      case "purple":
+        backImage = "css/media/backgrounds/purpleBack.jpeg";
+        break;
+      case "pink":
+        backImage = "css/media/backgrounds/pinkBack.jpeg";
+        break;
+      case "prism":
+        backImage = "css/media/backgrounds/prismBack.jpeg";
+        break;
+      case "kill":
+        backImage = "css/media/backgrounds/prismBack.jpeg";
+        break;
+    }
+    var game = document.getElementById("game");
+    game.style.backgroundImage = "url('" + backImage + "')";
   }
-  var game = document.getElementById("game");
-  game.style.backgroundImage = "url('" + backImage + "')";
-}
 }
 //////////////////////////////////////////
 ///             UPGRADES                //
 //////////////////////////////////////////
 
-function buyClickPower () {
-  if (count<clickCost) {}
-  if (count>=clickCost) {
-    count-=clickCost;
+function buyClickPower() {
+  if (count < clickCost) { }
+  if (count >= clickCost) {
+    count -= clickCost;
     clickCost = Math.round(clickCost * 80.5);
     num = num * 2;
     console.log(clickCost);
-     //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-       //cost insurance
-  let displayClickCost = clickCost;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (clickCost >= limit) {
-      displayClickCost = (clickCost / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  powerDub.innerHTML = " $" + displayClickCost;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
+    //cost insurance
+    let displayClickCost = clickCost;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (clickCost >= limit) {
+        displayClickCost = (clickCost / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    powerDub.innerHTML = " $" + displayClickCost;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
   }
+}
 
-function buyInsPower () {
-  if (count<insCost) {}
-  if (count>=insCost) {
-    count-=insCost;
+function buyInsPower() {
+  if (count < insCost) { }
+  if (count >= insCost) {
+    count -= insCost;
     insCost = Math.round(insCost * 80.5);
     num = num * 2;
     normalIns = normalIns * 2;
@@ -1628,28 +1635,29 @@ function buyInsPower () {
     addspawnIns = addspawnIns * 2;
     addcloneIns = addcloneIns * 2;
     console.log(insCost);
-     //count insurance
-      let displayCount = count;
+    //count insurance
+    let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (count >= limit) {
-      displayCount = (count / limit).toFixed(1) + suffixes[i];
-      break;
-    } }
-       //cost insurance
-  let displayInsCost = insCost;
-  for (let i = suffixes.length - 1; i >= 1; i--) {
-    const limit = Math.pow(10, i * 3);
-    if (insCost >= limit) {
-      displayInsCost = (insCost / limit).toFixed(1) + suffixes[i];
-      break;
+      const limit = Math.pow(10, i * 3);
+      if (count >= limit) {
+        displayCount = (count / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
-  }
-  idleDub.innerHTML = " $" + displayInsCost;
-  printerName.innerHTML = "You have $"+ displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
+    //cost insurance
+    let displayInsCost = insCost;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+      const limit = Math.pow(10, i * 3);
+      if (insCost >= limit) {
+        displayInsCost = (insCost / limit).toFixed(1) + suffixes[i];
+        break;
+      }
     }
+    idleDub.innerHTML = " $" + displayInsCost;
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
   }
+}
 
 
 let poplitSelect = false;
@@ -1675,37 +1683,37 @@ let canRun = true;
 
 
 function research() {
-   if (canRun) {
+  if (canRun) {
     canRun = false;
-     if (functions.length === 0) {
-    console.log("Research is complete!");
-    return;
-  } 
-  if (count<resCost) {}
-   if (count>=resCost) {
-    count = count - resCost;
-    resCost = Math.round(resCost * 50.8);
-    console.log(resCost);
-  let unusedFunctions = functions.filter(function(func) {
-    return !usedFunctions.includes(func);
-  });
-  if (unusedFunctions.length === 0) {
-    console.log("All res have already been used.");
-    return;
-  }
-  const index = Math.floor(Math.random() * unusedFunctions.length);
-  const chosenFunction = unusedFunctions[index];
-  usedFunctions.push(chosenFunction); 
-  chosenFunction();
-}
+    if (functions.length === 0) {
+      console.log("Research is complete!");
+      return;
+    }
+    if (count < resCost) { }
+    if (count >= resCost) {
+      count = count - resCost;
+      resCost = Math.round(resCost * 50.8);
+      console.log(resCost);
+      let unusedFunctions = functions.filter(function (func) {
+        return !usedFunctions.includes(func);
+      });
+      if (unusedFunctions.length === 0) {
+        console.log("All res have already been used.");
+        return;
+      }
+      const index = Math.floor(Math.random() * unusedFunctions.length);
+      const chosenFunction = unusedFunctions[index];
+      usedFunctions.push(chosenFunction);
+      chosenFunction();
+    }
     setTimeout(() => {
       canRun = true;
     }, 5000); // the cooldown time is set to 5000ms (5 seconds)
   }
- 
+
 }
 function resClick() {
-  showUpgradesClick(); 
+  showUpgradesClick();
   console.log("Researched click power");
 }
 
@@ -1718,15 +1726,16 @@ function resIdle() {
 
 
 function showUpgradesClick() {
-     //count insurance
-      let displayCount = count;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
+  //count insurance
+  let displayCount = count;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
     const limit = Math.pow(10, i * 3);
     if (count >= limit) {
       displayCount = (count / limit).toFixed(1) + suffixes[i];
       break;
-    } }
-       //cost insurance
+    }
+  }
+  //cost insurance
   let displayResCost = resCost;
   for (let i = suffixes.length - 1; i >= 1; i--) {
     const limit = Math.pow(10, i * 3);
@@ -1735,36 +1744,37 @@ function showUpgradesClick() {
       break;
     }
   }
-   printerName.innerHTML = "You have $"+ displayCount;
+  printerName.innerHTML = "You have $" + displayCount;
   tit.innerHTML = displayCount + " Cats - Catstack";
-   let timeLeft = 5; // 20 minutes in seconds
-   let labResElem = document.getElementById("labRes");
-   let timer = setInterval(function() {
-      if (timeLeft <= 0) {
-       clearInterval(timer);
-       labRes.innerHTML = "Research for $" + displayResCost;
-        document.getElementById("upgradesClick").style.display = "block";
-      } else {
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-        labResElem.innerHTML = "Time left: " + minutes + "m " + seconds + "s";
-        timeLeft--;
-      }
-    }, 1000); // 1 second interval
-  }
+  let timeLeft = 5; // 20 minutes in seconds
+  let labResElem = document.getElementById("labRes");
+  let timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      labRes.innerHTML = "Research for $" + displayResCost;
+      document.getElementById("upgradesClick").style.display = "block";
+    } else {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      labResElem.innerHTML = "Time left: " + minutes + "m " + seconds + "s";
+      timeLeft--;
+    }
+  }, 1000); // 1 second interval
+}
 
 
 
 function showUpgradeIns() {
-     //count insurance
-      let displayCount = count;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
+  //count insurance
+  let displayCount = count;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
     const limit = Math.pow(10, i * 3);
     if (count >= limit) {
       displayCount = (count / limit).toFixed(1) + suffixes[i];
       break;
-    } }
-       //cost insurance
+    }
+  }
+  //cost insurance
   let displayResCost = resCost;
   for (let i = suffixes.length - 1; i >= 1; i--) {
     const limit = Math.pow(10, i * 3);
@@ -1773,39 +1783,39 @@ function showUpgradeIns() {
       break;
     }
   }
-   printerName.innerHTML = "You have $"+ displayCount;
+  printerName.innerHTML = "You have $" + displayCount;
   tit.innerHTML = displayCount + " Cats - Catstack";
-   let timeLeft = 5; // 20 minutes in seconds
-   let labResElem = document.getElementById("labRes");
-   let timer = setInterval(function() {
-      if (timeLeft <= 0) {
-       clearInterval(timer);
-       labRes.innerHTML = "Research for $" + displayResCost;
-        document.getElementById("upgradesIdle").style.display = "block";
-      } else {
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-        labResElem.innerHTML = "Time left: " + minutes + "m " + seconds + "s";
-        timeLeft--;
-      }
-    }, 1000); // 1 second interval
-  }
+  let timeLeft = 5; // 20 minutes in seconds
+  let labResElem = document.getElementById("labRes");
+  let timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      labRes.innerHTML = "Research for $" + displayResCost;
+      document.getElementById("upgradesIdle").style.display = "block";
+    } else {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      labResElem.innerHTML = "Time left: " + minutes + "m " + seconds + "s";
+      timeLeft--;
+    }
+  }, 1000); // 1 second interval
+}
 
 
 
 
 function crestPrism() {
-   document.getElementById("poplitSelect").style.display = "block";
-   document.getElementById("backSelect").style.display = "block";
-   document.getElementById("killSelect").style.display = "none";
-   document.getElementById("royalSelect").style.display = "none";
+  document.getElementById("poplitSelect").style.display = "block";
+  document.getElementById("backSelect").style.display = "block";
+  document.getElementById("killSelect").style.display = "none";
+  document.getElementById("royalSelect").style.display = "none";
 }
 
 function crestQueen() {
-   document.getElementById("poplitSelect").style.display = "none";
-   document.getElementById("backSelect").style.display = "none";
-   document.getElementById("killSelect").style.display = "none";
-   document.getElementById("royalSelect").style.display = "block";
+  document.getElementById("poplitSelect").style.display = "none";
+  document.getElementById("backSelect").style.display = "none";
+  document.getElementById("killSelect").style.display = "none";
+  document.getElementById("royalSelect").style.display = "block";
   game.style.backgroundImage = "url('css/media/backgrounds/queenBack.jpeg')";
   backImage = "queen"
   selectedOptionBack = "queen"
@@ -1826,10 +1836,10 @@ function crestQueen() {
 }
 
 function crestKill() {
-   document.getElementById("poplitSelect").style.display = "none";
-   document.getElementById("backSelect").style.display = "none";
-   document.getElementById("killSelect").style.display = "block";
-   document.getElementById("royalSelect").style.display = "none";
+  document.getElementById("poplitSelect").style.display = "none";
+  document.getElementById("backSelect").style.display = "none";
+  document.getElementById("killSelect").style.display = "block";
+  document.getElementById("royalSelect").style.display = "none";
   game.style.backgroundImage = "url('css/media/backgrounds/killBack.jpeg')";
   backImage = "kill"
   selectedOptionBack = "kill"
@@ -1852,41 +1862,67 @@ function crestKill() {
 let usedSophie = false;
 let usedDev = false;
 
-// Redemption Code and Reward Functions
-function redeemcode() {
-  const code = prompt("Enter code:");
-  if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') && !usedSophie) {
-    usedSophie = true;
-    resLootSophie();
-  } else if (checkCode(prompt("Enter code:"), 'ZoPc') && !usedDev) {
-    usedDev = true;
-    resLootDev();
-  } else if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') || checkCode(prompt("Enter code:"), 'ZoPc')) {
-    alert("This code has already been redeemed!");
-  } else {
-    alert("Invalid code!");
+// Encryption and Decryption Functions
+async function encryptText(text, key) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+
+  const cryptoKey = await crypto.subtle.importKey(
+    "raw",
+    key,
+    "AES-CTR",
+    true,
+    ["encrypt"]
+  );
+
+  const counter = new Uint8Array(16); // Set your desired counter value
+
+  const ciphertext = await crypto.subtle.encrypt({ name: "AES-CTR", counter, length: 64 }, cryptoKey, data);
+
+  const ciphertextString = arrayBufferToBase64(ciphertext);
+
+  return { ciphertext: ciphertextString, counter };
+}
+
+async function decryptText(ciphertext, counter, key) {
+  const ciphertextArray = base64ToArrayBuffer(ciphertext);
+
+  const cryptoKey = await crypto.subtle.importKey(
+    "raw",
+    key,
+    "AES-CTR",
+    true,
+    ["decrypt"]
+  );
+
+  const plaintext = await crypto.subtle.decrypt({ name: "AES-CTR", counter, length: 64 }, cryptoKey, ciphertextArray);
+
+  const decoder = new TextDecoder();
+  return decoder.decode(plaintext);
+}
+
+// Helper Functions
+function hexToUint8Array(hex) {
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < hex.length; i += 2) {
+    bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
   }
+  return bytes;
 }
 
-function resLootSophie() {
-  alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
-  const randomAmount = Math.floor(Math.random() * 15) + 1;
-  goldencats += randomAmount;
-  heros = heros + 1;
-  alert(`You loot: 
-        ${randomAmount} Golden Cats!    
-        1 Legendary: Sophie!    
-        Total golden cats: ${goldencats}     
-        Total legendary cats: ${heros}`);
+function arrayBufferToBase64(buffer) {
+  const binary = new Uint8Array(buffer);
+  const base64 = btoa(String.fromCharCode.apply(null, binary));
+  return base64;
 }
 
-function resLootDev() {
-  alert("This code will give you 50-100 Golden Cats! Go Devs!!");
-  const randomAmount = Math.floor(Math.random() * 100) + 50;
-  goldencats += randomAmount;
-  alert(`You loot: 
-        ${randomAmount} Golden Cats!     
-        Total golden cats: ${goldencats}`);
+function base64ToArrayBuffer(base64) {
+  const binaryString = atob(base64);
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  return bytes;
 }
 
 // Main Code
@@ -1950,7 +1986,42 @@ window.addEventListener("contextmenu", function (n) {
   });
 
 
+// Redemption Code and Reward Functions
+function redeemcode() {
+  const code = prompt("Enter code:");
+  if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') && !usedSophie) {
+    usedSophie = true;
+    resLootSophie();
+  } else if (checkCode(prompt("Enter code:"), 'ZoPc') && !usedDev) {
+    usedDev = true;
+    resLootDev();
+  } else if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') || checkCode(prompt("Enter code:"), 'ZoPc')) {
+    alert("This code has already been redeemed!");
+  } else {
+    alert("Invalid code!");
+  }
+}
 
+function resLootSophie() {
+  alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
+  const randomAmount = Math.floor(Math.random() * 15) + 1;
+  goldencats += randomAmount;
+  heros = heros + 1;
+  alert(`You loot: 
+        ${randomAmount} Golden Cats!    
+        1 Legendary: Sophie!    
+        Total golden cats: ${goldencats}     
+        Total legendary cats: ${heros}`);
+}
+
+function resLootDev() {
+  alert("This code will give you 50-100 Golden Cats! Go Devs!!");
+  const randomAmount = Math.floor(Math.random() * 100) + 50;
+  goldencats += randomAmount;
+  alert(`You loot: 
+        ${randomAmount} Golden Cats!     
+        Total golden cats: ${goldencats}`);
+}
 
 // cYna75DXbadJ1A1g
 // ZoPc
