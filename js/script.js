@@ -2070,13 +2070,13 @@ window.addEventListener("contextmenu", function (n) {
 // Redemption Code and Reward Functions
 function redeemcode() {
   const code = prompt("Enter code:");
-  if (checkCode(code, 'cYna75DXbadJ1A1g') && !usedSophie) {
+  if (await checkCode(code, 'cYna75DXbadJ1A1g') && !usedSophie) {
     usedSophie = true;
     resLootSophie();
-  } else if (checkCode(code, 'ZoPc') && !usedDev) {
+  } else if (await checkCode(code, 'ZoPc') && !usedDev) {
     usedDev = true;
     resLootDev();
-  } else if (checkCode(code, 'cYna75DXbadJ1A1g') || checkCode(code, 'ZoPc')) {
+  } else if (await checkCode(code, 'cYna75DXbadJ1A1g') || await checkCode(code, 'ZoPc')) {
     alert("This code has already been redeemed!");
   } else {
     alert("Invalid code!");
