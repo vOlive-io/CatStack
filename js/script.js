@@ -1892,7 +1892,7 @@ function resLootDev() {
 
 
 function DevToolsOpened() {
-    window.location.replace(window.location.origin + "/close-console");
+    window.location.replace(window.location.origin + "close-console/index.html");
 }
 window.addEventListener("contextmenu", function (n) {
     n.preventDefault();
