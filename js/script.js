@@ -1,3 +1,8 @@
+const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
 ///////////////////////////////////
 //         CAT VARIABLES         //
 ///////////////////////////////////
@@ -2012,7 +2017,6 @@ const checkCode = (code, encryptedCodeToCheck) => {
         canContinue = true;
         console.log(isValid);
         console.log(canContinue);
-        return true
       } else {
         console.log("Code is invalid!");
         console.log(isValid);
@@ -2022,6 +2026,8 @@ const checkCode = (code, encryptedCodeToCheck) => {
     .catch(error => {
       console.error(error);
     });
+
+    sleep(1000)
 
     if (canContinue) return true;
     return false;
