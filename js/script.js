@@ -1857,14 +1857,14 @@ function redeemcode() {
   if (code === decryptText("cYna75DXbadJ1A1g") && !usedSophie) {
     usedSophie = true;
     resLootSophie();
-  } else {
-    if (code === decryptText("ZoPc") && !usedDev) {
-       usedDev = true;
-       resLootDev();
-    } else {
+  } else if (code === decryptText("ZoPc") && !usedDev) {
+    usedDev = true;
+    resLootDev();
+  } else if (code === decryptText("ZoPc") || code === decryptText("cYna75DXbadJ1A1g")) {
     alert("This code has already been redeemed!");
+  } else {
+    alert("Invalid code!");
   }
-}
 }
 
 
