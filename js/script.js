@@ -2012,6 +2012,7 @@ const checkCode = (code, encryptedCodeToCheck) => {
         canContinue = true;
         console.log(isValid);
         console.log(canContinue);
+        return true
       } else {
         console.log("Code is invalid!");
         console.log(isValid);
