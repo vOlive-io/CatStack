@@ -1852,121 +1852,102 @@ function crestKill() {
 let usedSophie = false;
 let usedDev = false;
 
+// Redemption Code and Reward Functions
 function redeemcode() {
   const code = prompt("Enter code:");
-  if (code === decryptText("cYna75DXbadJ1A1g") && !usedSophie) {
+  if (checkCode(code, 'cYna75DXbadJ1A1g') && !usedSophie) {
     usedSophie = true;
     resLootSophie();
-  } else if (code === decryptText("ZoPc") && !usedDev) {
+  } else if (checkCode(code, 'ZoPc') && !usedDev) {
     usedDev = true;
     resLootDev();
-  } else if (code === decryptText("ZoPc") || code === decryptText("cYna75DXbadJ1A1g")) {
+  } else if (checkCode(code, 'cYna75DXbadJ1A1g') || checkCode(code, 'ZoPc')) {
     alert("This code has already been redeemed!");
   } else {
     alert("Invalid code!");
   }
 }
 
-
 function resLootSophie() {
   alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
-  const randomAmount = Math.floor(Math.random() * 15) + 1; 
+  const randomAmount = Math.floor(Math.random() * 15) + 1;
   goldencats += randomAmount;
   heros = heros + 1;
   alert(`You loot: 
         ${randomAmount} Golden Cats!    
-        1 Legendary: Shopie!    
-        Total goldencats: ${goldencats}     
-        Total legendarys: ${heros}` );    
-} 
+        1 Legendary: Sophie!    
+        Total golden cats: ${goldencats}     
+        Total legendary cats: ${heros}`);
+}
 
 function resLootDev() {
   alert("This code will give you 50-100 Golden Cats! Go Devs!!");
-  const randomAmount = Math.floor(Math.random() * 100) + 50; 
+  const randomAmount = Math.floor(Math.random() * 100) + 50;
   goldencats += randomAmount;
   alert(`You loot: 
         ${randomAmount} Golden Cats!     
-        Total goldencats: ${goldencats}` );    
-} 
-
-
-
-function DevToolsOpened() {
-    window.location.replace(window.location.origin + "/close-console");
-}
-window.addEventListener("contextmenu", function (n) {
-    n.preventDefault();
-}),
-    window.addEventListener("devtoolschange", function (n) {
-        console.log("is DevTools open?", n.detail.open), n.detail.open && window.location.replace(window.location.origin + "/close-console");
-    }),
-    window.console && window.console.clear,
-    window.addEventListener("keydown", function (n) {
-        ((1 == n.metaKey && 1 == n.altKey && 73 == n.keyCode) ||
-            (1 == n.metaKey && 1 == n.altKey && 74 == n.keyCode) ||
-            (1 == n.metaKey && 1 == n.altKey && 67 == n.keyCode) ||
-            (1 == n.metaKey && 1 == n.shiftKey && 67 == n.keyCode) ||
-            (1 == n.ctrlKey && 1 == n.shiftKey && 73 == n.keyCode) ||
-            (1 == n.ctrlKey && 1 == n.shiftKey && 74 == n.keyCode) ||
-            (1 == n.ctrlKey && 1 == n.shiftKey && 67 == n.keyCode) ||
-            123 == n.keyCode) &&
-            DevToolsOpened();
-    });
-
-
-
-
-
-    
-
-
-async function decryptText(ciphertext, counter, key) {
-  // Decode the Base64 string back to a binary ciphertext
-  const ciphertextArray = base64ToArrayBuffer(ciphertext);
-
-  const cryptoKey = await crypto.subtle.importKey(
-    "raw",
-    key,
-    "AES-CTR", // Use AES-CTR mode for deterministic encryption
-    true,
-    ["decrypt"]
-  );
-
-  const plaintext = await crypto.subtle.decrypt({ name: "AES-CTR", counter, length: 64 }, cryptoKey, ciphertextArray);
-
-  const decoder = new TextDecoder();
-  return decoder.decode(plaintext);
+        Total golden cats: ${goldencats}`);
 }
 
-// Example usage
-const secretKeyHex = "YWNjMGM0MWUtZWQwNy00YTQ2LThkMjItY2FlMDJmY2MwMWE1"; // Replace with your secret key in hex format
+// Main Code
+const secretKeyHex = "YWNjMGM0MWUtZWQwNy00YTQ2LThkMjItY2FlMDJmY2MwMWE1";
 const secretKey = hexToUint8Array(secretKeyHex);
 
-function hexToUint8Array(hex) {
-  const bytes = new Uint8Array(hex.length / 2);
-  for (let i = 0; i < hex.length; i += 2) {
-    bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+// Example usage:
+const checkCode = (code, encryptedCodeToCheck) => {
+  let canContinue = false;
+
+  function2(code, encryptedCodeToCheck)
+    .then(isValid => {
+      if (isValid) {
+        canContinue = true;
+        console.log(isValid);
+        console.log(canContinue);
+      } else {
+        console.log("Code is invalid!");
+        console.log(isValid);
+        console.log(canContinue);
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+
+    if (canContinue) return true;
+    return false;
+};
+
+const function2 = async (code, encryptedCodeToCheck) => {
+  try {
+    const { ciphertext, counter } = await encryptText(code, secretKey);
+    return ciphertext === encryptedCodeToCheck;
+  } catch (error) {
+    console.error(error);
+    return false; // Handle errors as needed
   }
-  return bytes;
 }
 
-// Function to encode binary data as a Base64 string
-function arrayBufferToBase64(buffer) {
-  const binary = new Uint8Array(buffer);
-  const base64 = btoa(String.fromCharCode.apply(null, binary));
-  return base64;
+function DevToolsOpened() {
+  window.location.replace(window.location.origin + "/close-console");
 }
-
-// Function to decode a Base64 string to a binary data
-function base64ToArrayBuffer(base64) {
-  const binaryString = atob(base64);
-  const bytes = new Uint8Array(binaryString.length);
-  for (let i = 0; i < binaryString.length; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
-  }
-  return bytes;
-}
-
+window.addEventListener("contextmenu", function (n) {
+  n.preventDefault();
+}),
+  window.addEventListener("devtoolschange", function (n) {
+    console.log("is DevTools open?", n.detail.open), n.detail.open && window.location.replace(window.location.origin + "/close-console");
+  }),
+  window.console && window.console.clear,
+  window.addEventListener("keydown", function (n) {
+    ((1 == n.metaKey && 1 == n.altKey && 73 == n.keyCode) ||
+      (1 == n.metaKey && 1 == n.altKey && 74 == n.keyCode) ||
+      (1 == n.metaKey && 1 == n.altKey && 67 == n.keyCode) ||
+      (1 == n.metaKey && 1 == n.shiftKey && 67 == n.keyCode) ||
+      (1 == n.ctrlKey && 1 == n.shiftKey && 73 == n.keyCode) ||
+      (1 == n.ctrlKey && 1 == n.shiftKey && 74 == n.keyCode) ||
+      (1 == n.ctrlKey && 1 == n.shiftKey && 67 == n.keyCode) ||
+      123 == n.keyCode) &&
+      DevToolsOpened();
+  });
 
 
 
