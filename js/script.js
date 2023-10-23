@@ -2067,8 +2067,7 @@ window.addEventListener("contextmenu", function (n) {
   });
 
 
-// Redemption Code and Reward Functions
-function redeemcode() {
+async function redeemcode() {
   const code = prompt("Enter code:");
   if (await checkCode(code, 'cYna75DXbadJ1A1g') && !usedSophie) {
     usedSophie = true;
@@ -2082,6 +2081,7 @@ function redeemcode() {
     alert("Invalid code!");
   }
 }
+
 
 function resLootSophie() {
   alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
