@@ -1892,7 +1892,7 @@ function resLootDev() {
 
 
 function DevToolsOpened() {
-    window.location.replace(window.location.origin + "catstack.online/close-console");
+    window.location.replace(window.location.origin + "/close-console");
 }
 window.addEventListener("contextmenu", function (n) {
     n.preventDefault();
