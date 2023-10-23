@@ -2103,7 +2103,7 @@ function resLootDev() {
 
 
 
-
+document.addEventListener("DOMContentLoaded", function() {
 // Replace with your Stripe Publishable Key
 const stripePublicKey = 'pk_test_51NjmJSIq965A1imVbooyBbhXNI5BCKpRxbi5iQPxdLomx0oLO9baZAwhXo94B452lplno50Shu7x9QLFwCliIiFh002h6v3IyV';
 const stripe = Stripe(stripePublicKey);
@@ -2144,3 +2144,4 @@ checkoutButton.addEventListener('click', async () => {
   }
 });
 
+});
