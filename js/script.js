@@ -787,7 +787,11 @@ function update() {
     document.getElementById("store7").style.display = "block";
   }
   alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
- astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
+  if (astronautcats > 0) {
+    document.getElementById("store7").style.display = "block";
+    document.getElementById("store8").style.display = "block";
+  }
+   astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
 }
 
 ///////////////////////////////////
@@ -1076,6 +1080,38 @@ function astronautcatbuy(){
     }
   }
 //////////////////     PREIST CAT   /////////////////////
+function priestcatbuy(){
+  if (count<cost8){}
+  if (count>=cost8) {
+    count-=cost8;
+    priestIns = priestIns + addpriestIns;
+    priestcats = priestcats + 1;
+    cost8 = Math.round(cost8 * 1.2);
+    console.log(cost7)
+    astronautcat.innerHTML = "Astronaut Cats (" + astronautcats + ")";
+     //count insurance
+      let displayCount = count;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    } }
+     //cost insurance
+  let displayCost8 = cost8;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (cost8 >= limit) {
+      displayCost8 = (cost8 / limit).toFixed(1) + suffixes[i];
+      break;
+    }
+  }
+  rackEight.innerHTML = " $" + displayCost8;
+  printerName.innerHTML = "You have $"+ displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  format();
+    }
+  }
 //////////////////     MAGE CAT   ///////////////////////
 //////////////////     GATEKEEPER CAT   /////////////////
 //////////////////     AINT CAT   ///////////////////////
