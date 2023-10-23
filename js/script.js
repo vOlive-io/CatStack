@@ -2025,13 +2025,13 @@ window.addEventListener("contextmenu", function (n) {
 // Redemption Code and Reward Functions
 function redeemcode() {
   const code = prompt("Enter code:");
-  if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') && !usedSophie) {
+  if (checkCode(code, 'cYna75DXbadJ1A1g') && !usedSophie) {
     usedSophie = true;
     resLootSophie();
-  } else if (checkCode(prompt("Enter code:"), 'ZoPc') && !usedDev) {
+  } else if (checkCode(code, 'ZoPc') && !usedDev) {
     usedDev = true;
     resLootDev();
-  } else if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') || checkCode(prompt("Enter code:"), 'ZoPc')) {
+  } else if (checkCode(code, 'cYna75DXbadJ1A1g') || checkCode(code, 'ZoPc')) {
     alert("This code has already been redeemed!");
   } else {
     alert("Invalid code!");
