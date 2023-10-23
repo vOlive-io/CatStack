@@ -1039,6 +1039,38 @@ function alchemistcatbuy() {
   }
 }
 //////////////////     ASTRONAUT CAT   //////////////////
+function astronautcatbuy(){
+  if (count<cost7){}
+  if (count>=cost7) {
+    count-=cost7;
+    astronautIns = astronautIns + addastronautIns;
+    astronautcats = astronautcats + 1;
+    cost7 = Math.round(cost7 * 1.2);
+    console.log(cost7)
+    astronautcat.innerHTML = "Astronaut Cats (" + astronautcats + ")";
+     //count insurance
+      let displayCount = count;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    } }
+     //cost insurance
+  let displayCost7 = cost7;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (cost7 >= limit) {
+      displayCost7 = (cost7 / limit).toFixed(1) + suffixes[i];
+      break;
+    }
+  }
+  rackSeven.innerHTML = " $" + displayCost7;
+  printerName.innerHTML = "You have $"+ displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  format();
+    }
+  }
 //////////////////     PREIST CAT   /////////////////////
 //////////////////     MAGE CAT   ///////////////////////
 //////////////////     GATEKEEPER CAT   /////////////////
