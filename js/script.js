@@ -2097,3 +2097,50 @@ function resLootDev() {
 
 // cYna75DXbadJ1A1g
 // ZoPc
+
+
+
+
+
+
+
+// Replace with your Stripe Publishable Key
+const stripePublicKey = 'pk_test_51NjmJSIq965A1imVbooyBbhXNI5BCKpRxbi5iQPxdLomx0oLO9baZAwhXo94B452lplno50Shu7x9QLFwCliIiFh002h6v3IyV';
+const stripe = Stripe(stripePublicKey);
+const elements = stripe.elements();
+
+// Create an instance of Elements and mount it to the container
+const card = elements.create('card');
+card.mount('#stripe-elements-container');
+
+const checkoutButton = document.getElementById('checkout-button');
+checkoutButton.addEventListener('click', async () => {
+  // Create a payment method using the card element
+  const { token, error } = await stripe.createToken(card);
+
+  if (error) {
+    console.error(error);
+  } else {
+    // Send the token to your server for processing
+    const tokenData = { token: token.id };
+    // Replace with your server endpoint for payment processing
+    fetch('localhost:10000/create-payment-intent-500000-kit-coins', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tokenData),
+    })
+    .then((response) => {
+      if (response.ok) {
+        // Handle successful payment, e.g., show a success message
+        console.log('Payment successful!');
+        count += 500000
+      } else {
+        // Handle payment failure, e.g., show an error message
+        console.error('Payment failed.');
+      }
+    });
+  }
+});
+
