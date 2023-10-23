@@ -1702,7 +1702,7 @@ function buyInsPower() {
     addgatekeeperIns = addgatekeeperIns * 2;
     addantiIns = addantiIns * 2;
     addluckyIns = addluckyIns * 2;
-    addillusionistIns = iaddllusionistIns * 2;
+    addillusionistIns = addllusionistIns * 2;
     addcoderIns = addcoderIns * 2;
     addmutiIns = addmutiIns * 2;
     addspawnIns = addspawnIns * 2;
