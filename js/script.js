@@ -13,7 +13,6 @@ window.addEventListener('load', changeCoinImage);
 window.addEventListener('load', checkScreenSize);
 window.addEventListener('load', timer);
 window.addEventListener('load', startgame);
-window.addEventListener('load', update)
 window.addEventListener('resize', checkScreenSize);
 document.addEventListener("DOMContentLoaded", function () {
   const select = document.getElementById("poplitSelectStyle");
