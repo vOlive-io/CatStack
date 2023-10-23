@@ -1866,6 +1866,7 @@ function redeemcode() {
   } else {
     alert("Invalid code!");
   }
+}
 
 function resLootSophie() {
   alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
