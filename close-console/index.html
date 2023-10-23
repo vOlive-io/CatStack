@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Close JavaScript Console</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .message {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 100px auto;
+            max-width: 400px;
+        }
+
+        #message-text {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">
+        <p id="message-text">Please close the JavaScript console and then click the button below to return to the base
+            URL.</p>
+        <button onclick="redirectToBaseURL()">Return to Base URL</button>
+    </div>
+
+    <script>
+        function redirectToBaseURL() {
+            window.location.replace(window.location.origin); // Replace with your base URL
+        }
+
+        // Check if the console is open
+        setInterval(function () {
+            if (typeof console !== 'undefined' && console.clear) {
+                console.clear();
+                document.getElementById('message-text').innerHTML = 'The JavaScript console must be closed. Please close it and click the button below to return to the base URL.';
+            } else {
+                document.getElementById('message-text').innerHTML = 'The JavaScript console is closed. You can now click the button below to return to the base URL.';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
