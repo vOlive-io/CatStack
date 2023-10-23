@@ -1088,8 +1088,8 @@ function priestcatbuy(){
     priestIns = priestIns + addpriestIns;
     priestcats = priestcats + 1;
     cost8 = Math.round(cost8 * 1.2);
-    console.log(cost7)
-    astronautcat.innerHTML = "Astronaut Cats (" + astronautcats + ")";
+    console.log(cost8)
+    priestcat.innerHTML = "Priest Cats (" + priestcats + ")";
      //count insurance
       let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
