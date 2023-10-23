@@ -1086,10 +1086,10 @@ function priestcatbuy(){
   if (count>=cost8) {
     count-=cost8;
     priestIns = priestIns + addpriestIns;
-    priestcats = priestcats + 1;
+    catpriests = catpriests + 1;
     cost8 = Math.round(cost8 * 1.2);
     console.log(cost8)
-    priestcat.innerHTML = "Priest Cats (" + priestcats + ")";
+    priestcat.innerHTML = "Priest Cats (" + catpriests + ")";
      //count insurance
       let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
