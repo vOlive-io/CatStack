@@ -2008,30 +2008,21 @@ const secretKeyHex = "YWNjMGM0MWUtZWQwNy00YTQ2LThkMjItY2FlMDJmY2MwMWE1";
 const secretKey = hexToUint8Array(secretKeyHex);
 
 // Example usage:
-const checkCode = async (code, encryptedCodeToCheck) => {
-  let canContinue = false;
-
-  try {
-    const isValid = await function2(code, encryptedCodeToCheck);
-    
-    if (isValid) {
-      canContinue = true;
-      console.log(isValid);
-      console.log(canContinue);
-    } else {
-      console.log("Code is invalid!");
-      console.log(isValid);
-      console.log(canContinue);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-
-  sleep(1000);
-
-  if (canContinue) return true;
-  return false;
+const checkCode = (code, encryptedCodeToCheck) => {
+  return function2(code, encryptedCodeToCheck)
+    .then(isValid => {
+      if (isValid) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      return false;
+    });
 };
+
 
 
 const function2 = async (code, encryptedCodeToCheck) => {
