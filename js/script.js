@@ -1855,18 +1855,17 @@ let usedDev = false;
 // Redemption Code and Reward Functions
 function redeemcode() {
   const code = prompt("Enter code:");
-  if (checkCode(code, 'cYna75DXbadJ1A1g') && !usedSophie) {
+  if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') && !usedSophie) {
     usedSophie = true;
     resLootSophie();
-  } else if (checkCode(code, 'ZoPc') && !usedDev) {
+  } else if (checkCode(prompt("Enter code:"), 'ZoPc') && !usedDev) {
     usedDev = true;
     resLootDev();
-  } else if (checkCode(code, 'cYna75DXbadJ1A1g') || checkCode(code, 'ZoPc')) {
+  } else if (checkCode(prompt("Enter code:"), 'cYna75DXbadJ1A1g') || checkCode(prompt("Enter code:"), 'ZoPc')) {
     alert("This code has already been redeemed!");
   } else {
     alert("Invalid code!");
   }
-}
 
 function resLootSophie() {
   alert("This code will give you 1-15 Golden Cats and 1 legendary cat. SOPHIE FOR SOCAL!!!");
