@@ -758,11 +758,10 @@ function format() {
 function update() {
   goldtext.innerHTML = goldencats;
   adsleft.innerHTML = allow;
-  normalcat.innerHTML = " Cats (" + normalcats + ")";
   if (normalcats > 0) {
-    document.getElementById("store1").style.display = "block";
     document.getElementById("store2").style.display = "block";
   }
+   normalcat.innerHTML = " Cats (" + normalcats + ")";
   if (farmercats > 0) {
     document.getElementById("store2").style.display = "block";
     document.getElementById("store3").style.display = "block";
