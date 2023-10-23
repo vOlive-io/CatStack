@@ -785,6 +785,7 @@ function update() {
   if (alchemistcats > 0) {
     document.getElementById("store6").style.display = "block";
     document.getElementById("store7").style.display = "block";
+    document.getElementById("lab").style.display = "block";
   }
   alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
   if (astronautcats > 0) {
