@@ -781,9 +781,10 @@ function update() {
   bankercat.innerHTML = " Banker Cats (" + bankercats + ")";
   if (alchemistcats > 0) {
     document.getElementById("store6").style.display = "block";
-    document.getElementById("store6").style.display = "block";
+    document.getElementById("store7").style.display = "block";
   }
   alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
+ astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
 }
 
 ///////////////////////////////////
