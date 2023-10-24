@@ -805,8 +805,17 @@ function update() {
    priestcat.innerHTML = " Priest Cats (" + priestcats + ")";
   if (magecats > 0) {
     document.getElementById("store9").style.display = "block";
+    document.getElementById("store10").style.display = "block";
   }
   magecat.innerHTML = " Mage Cats (" + magecats + ")";
+  if (gatekeepercats > 0) {
+    document.getElementById("store10").style.display = "block";
+    document.getElementById("store11").style.display = "block";
+  }
+  gatekeepercat.innerHTML = " Mage Cats (" + magecats + ")";
+  if (ainticats > 0) {
+    document.getElementById("store11").style.display = "block";
+  }
 }
 
 ///////////////////////////////////
