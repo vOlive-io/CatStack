@@ -2214,27 +2214,42 @@ const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
 
-// // Attach an event listener to a button (e.g., a "Sign in with Google" button)
-// const signInWithGoogleButton = document.getElementById('signInWithGoogleButton');
-
-// signInWithGoogleButton.addEventListener('click', () => {
-  signInWithPopup(auth, googleProvider)
-    .then((result) => {
-      // You're signed in with Google!
-      console.log('Google User:', result.user);
-    })
-    .catch((error) => {
-      console.error('Google Sign-in Error:', error);
-    });
-// });
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // The user is signed in.
     console.log('Auto signed in:', user);
+
+    // Check if the user has a 'lastLogin' field in their profile
+    // If not, it's the user's first login
+    const lastLogin = user.metadata.lastSignInTime;
+    const userRef = firestore.doc(`users/${user.uid}`);
+
+    // You can store 'lastLogin' in Firestore or Realtime Database
+    // For example, using Firestore
+    userRef.get().then((doc) => {
+      if (!doc.exists) {
+        // First login
+        console.log("First login! Give the user a reward.");
+        // Implement logic to give the user a daily reward, e.g., add coins, etc.
+
+        // You can also store 'lastLogin' in the user's document
+        userRef.set({ lastLogin });
+      } else {
+        // Calculate the number of days since the last login
+        const lastLoginDate = new Date(lastLogin);
+        const currentDate = new Date();
+        const timeDifference = currentDate.getTime() - lastLoginDate.getTime();
+        const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+
+        console.log("Days since last login:", daysDifference);
+
+        // Implement logic to give the user a reward based on the daysDifference
+        count = Math.pow(2, daysDifference);
+        console.log("Reward:", Math.pow(2, daysDifference));
+      }
+    });
   } else {
     // No user is signed in.
     console.log('No user is signed in.');
   }
 });
-
