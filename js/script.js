@@ -2105,7 +2105,7 @@ function resLootDev() {
 
 document.addEventListener("DOMContentLoaded", function() {
 // Replace with your Stripe Publishable Key
-const stripePublicKey = 'pk_test_51NjmJSIq965A1imVbooyBbhXNI5BCKpRxbi5iQPxdLomx0oLO9baZAwhXo94B452lplno50Shu7x9QLFwCliIiFh002h6v3IyV';
+  const stripePublicKey = 'pk_test_51NjmJSIq965A1imVbooyBbhXNI5BCKpRxbi5iQPxdLomx0oLO9baZAwhXo94B452lplno50Shu7x9QLFwCliIiFh002h6v3IyV';
 const stripe = Stripe(stripePublicKey);
 const elements = stripe.elements();
 
@@ -2124,7 +2124,7 @@ checkoutButton.addEventListener('click', async () => {
     // Send the token to your server for processing
     const tokenData = { token: token.id };
     // Replace with your server endpoint for payment processing
-    fetch('localhost:10000/create-payment-intent-500000-kit-coins', {
+    fetch('http://localhost:10000/create-payment-intent-500000-kit-coins', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
