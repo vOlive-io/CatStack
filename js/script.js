@@ -2244,7 +2244,7 @@ onAuthStateChanged(auth, (user) => {
         console.log("Days since last login:", daysDifference);
 
         // Implement logic to give the user a reward based on the daysDifference
-        count = Math.pow(2, daysDifference);
+        count += Math.pow(2, daysDifference);
         console.log("Reward:", Math.pow(2, daysDifference));
       }
     });
