@@ -1315,8 +1315,8 @@ window.onload = function () {
     minercats = savedData.minercats || 0;
     alchemistcats = savedData.alchemistcats || 0;
     astronautcats = savedData.astronautcats || 0;
-    priestcat = savedData.priestcat || 0;
-    magecat = savedData.magecat || 0;
+    priestcats = savedData.priestcats || 0;
+    magecats = savedData.magecats || 0;
     gatekeepercats = savedData.gatekeepercats || 0;
     anticats = savedData.anticats || 0;
     luckycats = savedData.luckycats || 0;
@@ -1381,8 +1381,8 @@ setInterval(function () {
     minercats: minercats,
     alchemistcats: alchemistcats,
     astronautcats: astronautcats,
-    priestcat: priestcat,
-    magecat: magecat,
+    priestcats: priestcats,
+    magecats: magecats,
     gatekeepercats: gatekeepercats,
     anticats: anticats,
     luckycats: luckycats,
