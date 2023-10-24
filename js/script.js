@@ -2196,9 +2196,8 @@ checkoutButton.addEventListener('click', async () => {
 });
 
 
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
-import { getAnalytics } from 'firebase/analytics';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdfTL4-krSlj4b2x2gIzqfC2iepZia7vA",
