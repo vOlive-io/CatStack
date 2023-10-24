@@ -114,8 +114,8 @@ var bankercats = 0;
 var minercats = 0;
 var alchemistcats = 0;
 var astronautcats = 0;
-var catpriests = 0;
-var catmages = 0;
+var priestcats = 0;
+var magecats = 0;
 var gatekeepercats = 0;
 var anticats = 0;
 var luckycats = 0;
@@ -1096,10 +1096,10 @@ function priestcatbuy(){
   if (count>=cost8) {
     count-=cost8;
     priestIns = priestIns + addpriestIns;
-    catpriests = catpriests + 1;
+    priestcats = priestcats + 1;
     cost8 = Math.round(cost8 * 1.2);
     console.log(cost8)
-    priestcat.innerHTML = "Priest Cats (" + catpriests + ")";
+    priestcat.innerHTML = "Priest Cats (" + priestcats + ")";
      //count insurance
       let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1124,6 +1124,38 @@ function priestcatbuy(){
     }
   }
 //////////////////     MAGE CAT   ///////////////////////
+function magecatbuy(){
+  if (count<cost9){}
+  if (count>=cos9) {
+    count-=cost9;
+    mageIns = mageIns + addmageIns;
+    magecats = magecats + 1;
+    cost9 = Math.round(cost9 * 1.2);
+    console.log(cost9)
+    magecat.innerHTML = "Mage Cats (" + magecats + ")";
+     //count insurance
+      let displayCount = count;
+    for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    } }
+     //cost insurance
+  let displayCost9 = cost9;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (cost9 >= limit) {
+      displayCost9 = (cost9 / limit).toFixed(1) + suffixes[i];
+      break;
+    }
+  }
+  rackEight.innerHTML = " $" + displayCost8;
+  printerName.innerHTML = "You have $"+ displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  format();
+    }
+  }
 //////////////////     GATEKEEPER CAT   /////////////////
 //////////////////     AINT CAT   ///////////////////////
 //////////////////     LUCKY CAT   //////////////////////
