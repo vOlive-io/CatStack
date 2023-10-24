@@ -2196,6 +2196,10 @@ checkoutButton.addEventListener('click', async () => {
 });
 
 
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
+import { getAnalytics } from 'firebase/analytics';
+
 const firebaseConfig = {
   apiKey: "AIzaSyCdfTL4-krSlj4b2x2gIzqfC2iepZia7vA",
   authDomain: "cat-stack-5e4c4.firebaseapp.com",
@@ -2206,15 +2210,17 @@ const firebaseConfig = {
   measurementId: "G-9KLK1YLKTX"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = firebase.auth();
+const auth = getAuth(app);
 
+const googleProvider = new GoogleAuthProvider();
 
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+// // Attach an event listener to a button (e.g., a "Sign in with Google" button)
+// const signInWithGoogleButton = document.getElementById('signInWithGoogleButton');
 
-auth.signInWithPopup(googleProvider)
+// signInWithGoogleButton.addEventListener('click', () => {
+  signInWithPopup(auth, googleProvider)
     .then((result) => {
       // You're signed in with Google!
       console.log('Google User:', result.user);
@@ -2222,9 +2228,9 @@ auth.signInWithPopup(googleProvider)
     .catch((error) => {
       console.error('Google Sign-in Error:', error);
     });
+// });
 
-
-auth.onAuthStateChanged((user) => {
+onAuthStateChanged(auth, (user) => {
   if (user) {
     // The user is signed in.
     console.log('Auto signed in:', user);
@@ -2233,3 +2239,4 @@ auth.onAuthStateChanged((user) => {
     console.log('No user is signed in.');
   }
 });
+
