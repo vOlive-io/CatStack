@@ -805,7 +805,6 @@ function update() {
    priestcat.innerHTML = " Priest Cats (" + priestcats + ")";
   if (magecats > 0) {
     document.getElementById("store9").style.display = "block";
-    document.getElementById("store10").style.display = "block";
   }
   magecat.innerHTML = " Mage Cats (" + magecats + ")";
 }
