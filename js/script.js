@@ -812,7 +812,7 @@ function update() {
     document.getElementById("store11").style.display = "block";
   }
   gatekeepercat.innerHTML = " Mage Cats (" + magecats + ")";
-  if (aintcats > 0) {
+  if (anticats > 0) {
     document.getElementById("store11").style.display = "block";
   }
 }
