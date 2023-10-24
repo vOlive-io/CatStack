@@ -2194,3 +2194,42 @@ checkoutButton.addEventListener('click', async () => {
 });
 
 });
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCdfTL4-krSlj4b2x2gIzqfC2iepZia7vA",
+  authDomain: "cat-stack-5e4c4.firebaseapp.com",
+  projectId: "cat-stack-5e4c4",
+  storageBucket: "cat-stack-5e4c4.appspot.com",
+  messagingSenderId: "295664535439",
+  appId: "1:295664535439:web:150901559bd5a36528adfa",
+  measurementId: "G-9KLK1YLKTX"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = firebase.auth();
+
+
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+auth.signInWithPopup(googleProvider)
+    .then((result) => {
+      // You're signed in with Google!
+      console.log('Google User:', result.user);
+    })
+    .catch((error) => {
+      console.error('Google Sign-in Error:', error);
+    });
+
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // The user is signed in.
+    console.log('Auto signed in:', user);
+  } else {
+    // No user is signed in.
+    console.log('No user is signed in.');
+  }
+});
