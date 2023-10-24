@@ -1126,7 +1126,7 @@ function priestcatbuy(){
 //////////////////     MAGE CAT   ///////////////////////
 function magecatbuy(){
   if (count<cost9){}
-  if (count>=cos9) {
+  if (count>=cost9) {
     count-=cost9;
     mageIns = mageIns + addmageIns;
     magecats = magecats + 1;
