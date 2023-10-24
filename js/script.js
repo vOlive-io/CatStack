@@ -1606,31 +1606,31 @@ function poplitSelectList() {
     displayLevel = "orange";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[3].disabled = false;
   }
-  if (count >= 1000 && displayLevel === "orange") {
+  if (totalAch >= 6 && displayLevel === "orange") {
     displayLevel = "banana";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[4].disabled = false;
   }
-  if (count >= 10000 && displayLevel === "banana") {
+  if (totalAch >= 8 && displayLevel === "banana") {
     displayLevel = "lime";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[5].disabled = false;
   }
-  if (count >= 1000000 && displayLevel === "lime") {
+  if (totalAch >= 10 && displayLevel === "lime") {
     displayLevel = "blueberry";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[6].disabled = false;
   }
-  if (count >= 1000000000 && displayLevel === "blueberry") {
+  if (totalAch >= 12 && displayLevel === "blueberry") {
     displayLevel = "grape";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[7].disabled = false;
   }
-  if (count >= 1000000000000 && displayLevel === "grape") {
+  if (totalAch >= 14 && displayLevel === "grape") {
     displayLevel = "pomegranate";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[8].disabled = false;
   }
-  if (count >= 1000000000000000 && displayLevel === "pomegranate") {
+  if (totalAch >= 16 && displayLevel === "pomegranate") {
     displayLevel = "maple";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[9].disabled = false;
   }
-  if (count >= 1000000000000000000 && displayLevel === "maple") {
+  if (totalAch >= 18 && displayLevel === "maple") {
     displayLevel = "mango";
     document.getElementById("poplitSelectStyle").getElementsByTagName("option")[10].disabled = false;
   }
