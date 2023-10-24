@@ -1510,25 +1510,25 @@ function changeCoinImage() {
     if (totalAch >= 4 && earnedLevel === "raspberry") {
       earnedLevel = "orange";
     }
-    if (count >= 1000 && earnedLevel === "orange") {
+    if (totalAch >= 6 && earnedLevel === "orange") {
       earnedLevel = "banana";
     }
-    if (count >= 10000 && earnedLevel === "banana") {
+    if (totalAch >= 8 && earnedLevel === "banana") {
       earnedLevel = "lime";
     }
-    if (count >= 1000000 && earnedLevel === "lime") {
+    if (totalAch >= 10 && earnedLevel === "lime") {
       earnedLevel = "blueberry";
     }
-    if (count >= 1000000000 && earnedLevel === "blueberry") {
+    if (totalAch >= 12 && earnedLevel === "blueberry") {
       earnedLevel = "grape";
     }
-    if (count >= 1000000000000 && earnedLevel === "grape") {
+    if (totalAch >= 14 && earnedLevel === "grape") {
       earnedLevel = "pomegranate";
     }
-    if (count >= 1000000000000000 && earnedLevel === "pomegranate") {
+    if (totalAch >= 16 && earnedLevel === "pomegranate") {
       earnedLevel = "maple";
     }
-    if (count >= 1000000000000000000 && earnedLevel === "maple") {
+    if (totalAch >= 18 && earnedLevel === "maple") {
       earnedLevel = "mango";
     }
     poplitLevel = earnedLevel;
