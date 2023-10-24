@@ -798,6 +798,11 @@ function update() {
     document.getElementById("store8").style.display = "block";
   }
    astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
+   if (catpriests > 0) {
+    document.getElementById("store8").style.display = "block";
+    document.getElementById("store9").style.display = "block";
+  }
+   catpriest.innerHTML = " Priest Cats (" + catpreist + ")";
 }
 
 ///////////////////////////////////
