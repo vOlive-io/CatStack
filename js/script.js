@@ -36,13 +36,13 @@ function loadshop() {
   document.getElementById("shop").style.display = "block";
   document.getElementById("show").style.display = "none";
 }
+function hideshop() {
+  document.getElementById("shop").style.display = "none";
+  document.getElementById("show").style.display = "flex";
+}
 
 
-
-
-
-
-var time = 3600000; // time variable - can be edited
+var time = 3600000;
 
 setInterval(function () {
   allow += 1;
@@ -627,10 +627,7 @@ const suffixes = [
 ///////////////////////////////////
 //        FORMAT AND ADS         //
 ///////////////////////////////////
-function hideshop() {
-  document.getElementById("shop").style.display = "none";
-  document.getElementById("show").style.display = "flex";
-}
+
 function showAdd() {
   if (allow > 0) {
     const ads = [ad1, ad2, ad3];
