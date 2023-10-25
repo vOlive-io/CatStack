@@ -2270,8 +2270,10 @@ onAuthStateChanged(auth, (user) => {
 // }
 
 for (var propName in this) {
+  console.log(propName);
   if (typeof this[propName] === 'function' && !this[propName].toString().includes('[native code]')) {
     window[propName] = this[propName];
+    console.log("Function:", this[propName]);
   }
 }
 
