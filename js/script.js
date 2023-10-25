@@ -762,7 +762,7 @@ function update() {
   if (normalcats > 0) {
     document.getElementById("store2").style.display = "block";
   }
-  normalcat.innerHTML = " Cats (" + normalcats + ")";
+   normalcat.innerHTML = " Cats (" + normalcats + ")";
   if (farmercats > 0) {
     document.getElementById("store2").style.display = "block";
     document.getElementById("store3").style.display = "block";
@@ -793,12 +793,12 @@ function update() {
     document.getElementById("store7").style.display = "block";
     document.getElementById("store8").style.display = "block";
   }
-  astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
-  if (priestcats > 0) {
+   astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
+   if (priestcats > 0) {
     document.getElementById("store8").style.display = "block";
     document.getElementById("store9").style.display = "block";
   }
-  priestcat.innerHTML = " Priest Cats (" + priestcats + ")";
+   priestcat.innerHTML = " Priest Cats (" + priestcats + ")";
   if (magecats > 0) {
     document.getElementById("store9").style.display = "block";
     document.getElementById("store10").style.display = "block";
@@ -1067,107 +1067,104 @@ function alchemistcatbuy() {
   }
 }
 //////////////////     ASTRONAUT CAT   //////////////////
-function astronautcatbuy() {
-  if (count < cost7) { }
-  if (count >= cost7) {
-    count -= cost7;
+function astronautcatbuy(){
+  if (count<cost7){}
+  if (count>=cost7) {
+    count-=cost7;
     astronautIns = astronautIns + addastronautIns;
     astronautcats = astronautcats + 1;
     cost7 = Math.round(cost7 * 1.2);
     console.log(cost7)
     astronautcat.innerHTML = "Astronaut Cats (" + astronautcats + ")";
-    //count insurance
-    let displayCount = count;
+     //count insurance
+      let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (count >= limit) {
-        displayCount = (count / limit).toFixed(1) + suffixes[i];
-        break;
-      }
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    } }
+     //cost insurance
+  let displayCost7 = cost7;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (cost7 >= limit) {
+      displayCost7 = (cost7 / limit).toFixed(1) + suffixes[i];
+      break;
     }
-    //cost insurance
-    let displayCost7 = cost7;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (cost7 >= limit) {
-        displayCost7 = (cost7 / limit).toFixed(1) + suffixes[i];
-        break;
-      }
-    }
-    rackSeven.innerHTML = " $" + displayCost7;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
-    format();
   }
-}
+  rackSeven.innerHTML = " $" + displayCost7;
+  printerName.innerHTML = "You have $"+ displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  format();
+    }
+  }
 //////////////////     PREIST CAT   /////////////////////
-function priestcatbuy() {
-  if (count < cost8) { }
-  if (count >= cost8) {
-    count -= cost8;
+function priestcatbuy(){
+  if (count<cost8){}
+  if (count>=cost8) {
+    count-=cost8;
     priestIns = priestIns + addpriestIns;
     priestcats = priestcats + 1;
     cost8 = Math.round(cost8 * 1.2);
     console.log(cost8)
     priestcat.innerHTML = "Priest Cats (" + priestcats + ")";
-    //count insurance
-    let displayCount = count;
+     //count insurance
+      let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (count >= limit) {
-        displayCount = (count / limit).toFixed(1) + suffixes[i];
-        break;
-      }
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    } }
+     //cost insurance
+  let displayCost8 = cost8;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (cost8 >= limit) {
+      displayCost8 = (cost8 / limit).toFixed(1) + suffixes[i];
+      break;
     }
-    //cost insurance
-    let displayCost8 = cost8;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (cost8 >= limit) {
-        displayCost8 = (cost8 / limit).toFixed(1) + suffixes[i];
-        break;
-      }
-    }
-    rackEight.innerHTML = " $" + displayCost8;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
-    format();
   }
-}
+  rackEight.innerHTML = " $" + displayCost8;
+  printerName.innerHTML = "You have $"+ displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  format();
+    }
+  }
 //////////////////     MAGE CAT   ///////////////////////
-function magecatbuy() {
-  if (count < cost9) { }
-  if (count >= cost9) {
-    count -= cost9;
+function magecatbuy(){
+  if (count<cost9){}
+  if (count>=cost9) {
+    count-=cost9;
     mageIns = mageIns + addmageIns;
     magecats = magecats + 1;
     cost9 = Math.round(cost9 * 1.2);
     console.log(cost9)
     magecat.innerHTML = "Mage Cats (" + magecats + ")";
-    //count insurance
-    let displayCount = count;
+     //count insurance
+      let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (count >= limit) {
-        displayCount = (count / limit).toFixed(1) + suffixes[i];
-        break;
-      }
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    } }
+     //cost insurance
+  let displayCost9 = cost9;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (cost9 >= limit) {
+      displayCost9 = (cost9 / limit).toFixed(1) + suffixes[i];
+      break;
     }
-    //cost insurance
-    let displayCost9 = cost9;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (cost9 >= limit) {
-        displayCost9 = (cost9 / limit).toFixed(1) + suffixes[i];
-        break;
-      }
-    }
-    rackEight.innerHTML = " $" + displayCost8;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
-    format();
   }
-}
+  rackEight.innerHTML = " $" + displayCost8;
+  printerName.innerHTML = "You have $"+ displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  format();
+    }
+  }
 //////////////////     GATEKEEPER CAT   /////////////////
 //////////////////     AINT CAT   ///////////////////////
 //////////////////     LUCKY CAT   //////////////////////
@@ -2152,46 +2149,46 @@ function resLootDev() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Replace with your Stripe Publishable Key
+document.addEventListener("DOMContentLoaded", function() {
+// Replace with your Stripe Publishable Key
   const stripePublicKey = 'pk_test_51NjmJSIq965A1imVbooyBbhXNI5BCKpRxbi5iQPxdLomx0oLO9baZAwhXo94B452lplno50Shu7x9QLFwCliIiFh002h6v3IyV';
-  const stripe = Stripe(stripePublicKey);
-  const elements = stripe.elements();
+const stripe = Stripe(stripePublicKey);
+const elements = stripe.elements();
 
-  // Create an instance of Elements and mount it to the container
-  const card = elements.create('card');
-  card.mount('#stripe-elements-container');
+// Create an instance of Elements and mount it to the container
+const card = elements.create('card');
+card.mount('#stripe-elements-container');
 
-  const checkoutButton = document.getElementById('checkout-button');
-  checkoutButton.addEventListener('click', async () => {
-    // Create a payment method using the card element
-    const { token, error } = await stripe.createToken(card);
+const checkoutButton = document.getElementById('checkout-button');
+checkoutButton.addEventListener('click', async () => {
+  // Create a payment method using the card element
+  const { token, error } = await stripe.createToken(card);
 
-    if (error) {
-      console.error(error);
-    } else {
-      // Send the token to your server for processing
-      const tokenData = { token: token.id };
-      // Replace with your server endpoint for payment processing
-      fetch('http://localhost:10000/create-payment-intent-500000-kit-coins', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(tokenData),
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Handle successful payment, e.g., show a success message
-            console.log('Payment successful!');
-            count += 500000
-          } else {
-            // Handle payment failure, e.g., show an error message
-            console.error('Payment failed.');
-          }
-        });
-    }
-  });
+  if (error) {
+    console.error(error);
+  } else {
+    // Send the token to your server for processing
+    const tokenData = { token: token.id };
+    // Replace with your server endpoint for payment processing
+    fetch('http://localhost:10000/create-payment-intent-500000-kit-coins', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tokenData),
+    })
+    .then((response) => {
+      if (response.ok) {
+        // Handle successful payment, e.g., show a success message
+        console.log('Payment successful!');
+        count += 500000
+      } else {
+        // Handle payment failure, e.g., show an error message
+        console.error('Payment failed.');
+      }
+    });
+  }
+});
 
 });
 
@@ -2272,94 +2269,10 @@ onAuthStateChanged(auth, (user) => {
 //   window[functionName] = func;
 // }
 
-// for (var propName in this) {
-//   if (typeof this[propName] === 'function') { //  && !this[propName].toString().includes('[native code]')
-//     window[propName] = this[propName];
-//   }
-// }
+for (var propName in this) {
+  if (typeof this[propName] === 'function') { //  && !this[propName].toString().includes('[native code]')
+    window[propName] = this[propName];
+  }
+}
 
-// window.hideshop = hideshop;
-
-// function getAllFunctions() {
-//   var allFunctions = [];
-//   console.log(this)
-//   for (var propName in this) {
-//     console.log(this[propName])
-//     if (typeof this[propName] === 'function' && !this[propName].toString().includes('[native code]')) {
-//       allFunctions.push(propName);
-//       window[propName] = this[propName]; // Attach the function to the window object
-//     }
-//   }
-//   return allFunctions;
-// }
-
-// const functionNames = getAllFunctions();
-
-// console.log(functionNames);
-
-
-// function getAllFunctions() {
-//   var allFunctions = [];
-//   for (var propName in this) {
-//     if (typeof this[propName] === 'function' && !this[propName].toString().includes('[native code]')) {
-//       allFunctions.push(propName);
-//       window[propName] = this[propName]; // Attach the function to the window object
-//     }
-//   }
-//   return allFunctions;
-// }
-
-// const functionNames = getAllFunctions(); // Call getAllFunctions from the same context
-
-// console.log(functionNames);
-
-
-window.startgame = startgame;
-window.loadshop = loadshop;
 window.hideshop = hideshop;
-window.showAdd = showAdd;
-window.ad1 = ad1;
-window.ad2 = ad2;
-window.ad3 = ad3;
-window.exe = exe;
-window.timer = timer;
-window.format = format;
-window.update = update;
-window.idle = idle;
-window.normalcatbuy = normalcatbuy;
-window.farmercatbuy = farmercatbuy;
-window.minercatbuy = minercatbuy;
-window.workercatbuy = workercatbuy;
-window.bankercatbuy = bankercatbuy;
-window.alchemistcatbuy = alchemistcatbuy;
-window.astronautcatbuy = astronautcatbuy;
-window.priestcatbuy = priestcatbuy;
-window.magecatbuy = magecatbuy;
-window.dev = dev;
-window.checkScreenSize = checkScreenSize;
-window.resetGame = resetGame;
-window.checkAchievements = checkAchievements;
-window.changeCoinImage = changeCoinImage;
-window.poplitSelectList = poplitSelectList;
-window.wallpaper = wallpaper;
-window.buyClickPower = buyClickPower;
-window.buyInsPower = buyInsPower;
-window.getSelected = getSelected;
-window.research = research;
-window.resClick = resClick;
-window.resIdle = resIdle;
-window.showUpgradesClick = showUpgradesClick;
-window.showUpgradeIns = showUpgradeIns;
-window.crestPrism = crestPrism;
-window.crestQueen = crestQueen;
-window.crestKill = crestKill;
-window.encryptText = encryptText;
-window.decryptText = decryptText;
-window.hexToUint8Array = hexToUint8Array;
-window.arrayBufferToBase64 = arrayBufferToBase64;
-window.base64ToArrayBuffer = base64ToArrayBuffer;
-window.DevToolsOpened = DevToolsOpened;
-window.redeemcode = redeemcode;
-window.resLootSophie = resLootSophie;
-window.resLootDev = resLootDev;
-window.function2 = function2;
