@@ -2192,67 +2192,64 @@ checkoutButton.addEventListener('click', async () => {
 
 });
 
-/*
-aa
-// import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
-// import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCdfTL4-krSlj4b2x2gIzqfC2iepZia7vA",
-//   authDomain: "cat-stack-5e4c4.firebaseapp.com",
-//   projectId: "cat-stack-5e4c4",
-//   storageBucket: "cat-stack-5e4c4.appspot.com",
-//   messagingSenderId: "295664535439",
-//   appId: "1:295664535439:web:150901559bd5a36528adfa",
-//   measurementId: "G-9KLK1YLKTX"
-// };
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
+const firebaseConfig = {
+  apiKey: "AIzaSyCdfTL4-krSlj4b2x2gIzqfC2iepZia7vA",
+  authDomain: "cat-stack-5e4c4.firebaseapp.com",
+  projectId: "cat-stack-5e4c4",
+  storageBucket: "cat-stack-5e4c4.appspot.com",
+  messagingSenderId: "295664535439",
+  appId: "1:295664535439:web:150901559bd5a36528adfa",
+  measurementId: "G-9KLK1YLKTX"
+};
 
-// const googleProvider = new GoogleAuthProvider();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // The user is signed in.
-//     console.log('Auto signed in:', user);
+const googleProvider = new GoogleAuthProvider();
 
-//     // Check if the user has a 'lastLogin' field in their profile
-//     // If not, it's the user's first login
-//     const lastLogin = user.metadata.lastSignInTime;
-//     const userRef = firestore.doc(`users/${user.uid}`);
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // The user is signed in.
+    console.log('Auto signed in:', user);
 
-//     // You can store 'lastLogin' in Firestore or Realtime Database
-//     // For example, using Firestore
-//     userRef.get().then((doc) => {
-//       if (!doc.exists) {
-//         // First login
-//         console.log("First login! Give the user a reward.");
-//         // Implement logic to give the user a daily reward, e.g., add coins, etc.
+    // Check if the user has a 'lastLogin' field in their profile
+    // If not, it's the user's first login
+    const lastLogin = user.metadata.lastSignInTime;
+    const userRef = firestore.doc(`users/${user.uid}`);
 
-//         // You can also store 'lastLogin' in the user's document
-//         userRef.set({ lastLogin });
-//       } else {
-//         // Calculate the number of days since the last login
-//         const lastLoginDate = new Date(lastLogin);
-//         const currentDate = new Date();
-//         const timeDifference = currentDate.getTime() - lastLoginDate.getTime();
-//         const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+    // You can store 'lastLogin' in Firestore or Realtime Database
+    // For example, using Firestore
+    userRef.get().then((doc) => {
+      if (!doc.exists) {
+        // First login
+        console.log("First login! Give the user a reward.");
+        // Implement logic to give the user a daily reward, e.g., add coins, etc.
 
-//         console.log("Days since last login:", daysDifference);
+        // You can also store 'lastLogin' in the user's document
+        userRef.set({ lastLogin });
+      } else {
+        // Calculate the number of days since the last login
+        const lastLoginDate = new Date(lastLogin);
+        const currentDate = new Date();
+        const timeDifference = currentDate.getTime() - lastLoginDate.getTime();
+        const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
 
-//         // Implement logic to give the user a reward based on the daysDifference
-//         count += Math.pow(2, daysDifference);
-//         console.log("Reward:", Math.pow(2, daysDifference));
-//       }
-//     });
-//   } else {
-//     // No user is signed in.
-//     console.log('No user is signed in.');
-//   }
-// });
+        console.log("Days since last login:", daysDifference);
 
-*/
+        // Implement logic to give the user a reward based on the daysDifference
+        count += Math.pow(2, daysDifference);
+        console.log("Reward:", Math.pow(2, daysDifference));
+      }
+    });
+  } else {
+    // No user is signed in.
+    console.log('No user is signed in.');
+  }
+});
 
 
 
