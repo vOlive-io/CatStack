@@ -2275,3 +2275,4 @@ for (var propName in this) {
   }
 }
 
+window.hideshop = hideshop()
