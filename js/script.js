@@ -2271,6 +2271,7 @@ onAuthStateChanged(auth, (user) => {
 
 for (var propName in this) {
   if (typeof this[propName] === 'function' && !this[propName].toString().includes('[native code]')) {
-    export { propName as window[propName] };
+    window[propName] = this[propName];
   }
 }
+
