@@ -2192,7 +2192,8 @@ checkoutButton.addEventListener('click', async () => {
 
 });
 
-
+/*
+aa
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
 // import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
@@ -2250,3 +2251,5 @@ checkoutButton.addEventListener('click', async () => {
 //     console.log('No user is signed in.');
 //   }
 // });
+
+*/
