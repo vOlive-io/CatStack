@@ -2255,16 +2255,22 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-// Export all functions
-const functionsToExport = { hideshop, someOtherFunction };
-for (const funcName in functionsToExport) {
-  if (functionsToExport.hasOwnProperty(funcName)) {
-    const func = functionsToExport[funcName];
-    exportFunction(funcName, func);
-  }
-}
+// // Export all functions
+// const functionsToExport = { hideshop, someOtherFunction };
+// for (const funcName in functionsToExport) {
+//   if (functionsToExport.hasOwnProperty(funcName)) {
+//     const func = functionsToExport[funcName];
+//     exportFunction(funcName, func);
+//   }
+// }
 
-function exportFunction(functionName, func) {
-  export { [functionName] };
-  window[functionName] = func;
+// function exportFunction(functionName, func) {
+//   export { [functionName] };
+//   window[functionName] = func;
+// }
+
+for (var propName in this) {
+  if (typeof this[propName] === 'function' && !this[propName].toString().includes('[native code]')) {
+    export { propName as window[propName] };
+  }
 }
