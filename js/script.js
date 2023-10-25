@@ -2277,4 +2277,4 @@ for (var propName in this) {
   }
 }
 
-window.hideshop = hideshop()
+window.hideshop = hideshop;
