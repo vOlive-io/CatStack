@@ -2253,3 +2253,21 @@ aa
 // });
 
 */
+
+
+
+
+
+// Export all functions
+const functionsToExport = { hideshop, someOtherFunction };
+for (const funcName in functionsToExport) {
+  if (functionsToExport.hasOwnProperty(funcName)) {
+    const func = functionsToExport[funcName];
+    exportFunction(funcName, func);
+  }
+}
+
+function exportFunction(functionName, func) {
+  export { [functionName] };
+  window[functionName] = func;
+}
