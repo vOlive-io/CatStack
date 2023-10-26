@@ -2402,3 +2402,4 @@ window.poplitLevel = poplitLevel;
 window.earnedLevel = earnedLevel;
 window.screenSize = screenSize;
 window.resetGame = resetGame;
+window.catpriest = catpriest;
