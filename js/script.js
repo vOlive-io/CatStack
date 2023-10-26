@@ -2239,6 +2239,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 window.startgame = startgame;
+window.play = play;
 window.loadshop = loadshop;
 window.hideshop = hideshop;
 window.showAdd = showAdd;
