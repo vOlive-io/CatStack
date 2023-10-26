@@ -2400,3 +2400,5 @@ window.canRun = canRun;
 window.poplitSelect = poplitSelect;
 window.poplitLevel = poplitLevel;
 window.earnedLevel = earnedLevel;
+window.screenSize = screenSize;
+window.resetGame = resetGame;
