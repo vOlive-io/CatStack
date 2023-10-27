@@ -2,7 +2,7 @@ const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function  play() {
+ function  play() {
     count += num;
     clicks += num;
     let displayCount = count;
@@ -12,6 +12,12 @@ function  play() {
         displayCount = (count / limit).toFixed(1) + suffixes[i];
         break;
       }
+    }
+    printerName.innerHTML = "You have $" + displayCount;
+    tit.innerHTML = displayCount + " Cats - Catstack";
+    checkAchievements();
+    format();
+  }
 
 
 ///////////////////////////////////
