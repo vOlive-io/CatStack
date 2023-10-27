@@ -2206,7 +2206,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
+/*
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js';
 
@@ -2323,7 +2323,7 @@ onAuthStateChanged(auth, (user) => {
 // const functionNames = getAllFunctions(); // Call getAllFunctions from the same context
 
 // console.log(functionNames);
-
+*/
 
 window.startgame = startgame;
 window.play = play;
