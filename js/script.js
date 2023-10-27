@@ -3,22 +3,69 @@ const sleep = (ms) => {
 }
 
 
-function  play() {
-    count += num;
-    clicks += num;
-    let displayCount = count;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (count >= limit) {
-        displayCount = (count / limit).toFixed(1) + suffixes[i];
-        break;
-      }
+let lastClickTime = 0;
+let clickCount = 0;
+let sprinting = false;
+let sprintStartTime = 0;
+const clickCooldown = 60000; // 1 minute in milliseconds
+const maxClickRate = 50; // Maximum clicks per second
+const sprintDuration = 40000; // 40 seconds in milliseconds
+
+let lastClickTime = 0;
+let clickCount = 0;
+let sprinting = false;
+let sprintStartTime = 0;
+const clickCooldown = 60000; // 1 minute in milliseconds
+const maxClickRate = 50; // Maximum clicks per second
+const sprintDuration = 40000; // 40 seconds in milliseconds
+
+function play() {
+  const currentTime = Date.now();
+  const clickDeltaTime = currentTime - lastClickTime;
+  const clickRate = 1000 / clickDeltaTime; // Calculate clicks per second
+
+  if (!sprinting) {
+    // Not in sprint mode, check if sprint can be initiated
+    if (currentTime - sprintStartTime >= sprintDuration) {
+      sprinting = true;
+      sprintStartTime = currentTime;
+      clickCount = 0;
     }
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
-    checkAchievements();
-    format();
+
+    if (clickRate <= maxClickRate) {
+      clickCount += num;
+    }
+  } else {
+    // In sprint mode, check if sprint duration has passed
+    if (currentTime - sprintStartTime >= sprintDuration) {
+      sprinting = false;
+    }
+
+    clickCount += num;
   }
+
+  lastClickTime = currentTime;
+
+  if (clickRate <= 5) {
+    // Limit the increment when clicking slower than 5 CPS
+    count += clickCount;
+    clickCount = 0;
+  }
+
+  let displayCount = count;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
+    }
+  }
+  printerName.innerHTML = "You have $" + displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  checkAchievements();
+  format();
+}
+
 
 
 ///////////////////////////////////
@@ -2497,3 +2544,10 @@ window.earnedLevel = earnedLevel;
 window.screenSize = screenSize;
 window.resetGame = resetGame;
 window.catpriest = catpriest;
+window.lastClickTime = lastClickTime;
+window.clickCount = clickCount;
+window.sprinting = sprinting;
+window.sprintStartTime = sprintStartTime;
+window.clickCooldown = clickCooldown; // 1 minute in milliseconds
+window.maxClickRate = maxClickRate; // Maximum clicks per second
+window.sprintDuration = sprintDuration; // 40 seconds in milliseconds
