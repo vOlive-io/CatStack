@@ -1946,62 +1946,6 @@ function showUpgradeIns() {
 }
 
 
-/*
-
-function crestPrism() {
-  document.getElementById("poplitSelect").style.display = "block";
-  document.getElementById("backSelect").style.display = "block";
-  document.getElementById("killSelect").style.display = "none";
-  document.getElementById("royalSelect").style.display = "none";
-}
-
-function crestQueen() {
-  document.getElementById("poplitSelect").style.display = "none";
-  document.getElementById("backSelect").style.display = "none";
-  document.getElementById("killSelect").style.display = "none";
-  document.getElementById("royalSelect").style.display = "block";
-  game.style.backgroundImage = "url('css/media/backgrounds/queenBack.jpeg')";
-  backImage = "queen"
-  selectedOptionBack = "queen"
-  earnedLevel = "queen";
-  coin.innerHTML = "<img src='css/media/poplits/pinkCoin.png' class='coin-image'>";
-  game.style.backgroundImage = "url('css/media/backgrounds/pinkBack.jpeg')";
-  crest.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  upgradesClick.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  upgradesIdle.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  store1.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  store2.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  store3.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  store4.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  store5.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-  store6.style.backgroundImage = "url('css/media/backgrounds/hotpink.png')";
-
-  game.style.border = "hotpink 10px groove";
-}
-
-function crestKill() {
-  document.getElementById("poplitSelect").style.display = "none";
-  document.getElementById("backSelect").style.display = "none";
-  document.getElementById("killSelect").style.display = "block";
-  document.getElementById("royalSelect").style.display = "none";
-  game.style.backgroundImage = "url('css/media/backgrounds/killBack.jpeg')";
-  backImage = "kill"
-  selectedOptionBack = "kill"
-  earnedLevel = "kill";
-  coin.innerHTML = "<img src='css/media/poplits/knightCoin.png' class='coin-image'>";
-  lab.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  upgradesClick.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  upgradesIdle.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  crest.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  store1.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  store2.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  store3.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  store4.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  store5.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  store6.style.backgroundImage = "url('css/media/backgrounds/red.png')";
-  game.style.border = "#ff1100 10px groove";
-}
-*/
 
 let usedSophie = false;
 let usedDev = false;
@@ -2384,9 +2328,6 @@ window.resClick = resClick;
 window.resIdle = resIdle;
 window.showUpgradesClick = showUpgradesClick;
 window.showUpgradeIns = showUpgradeIns;
-window.crestPrism = crestPrism;
-window.crestQueen = crestQueen;
-window.crestKill = crestKill;
 window.encryptText = encryptText;
 window.decryptText = decryptText;
 window.hexToUint8Array = hexToUint8Array;
