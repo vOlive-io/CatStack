@@ -336,6 +336,21 @@ fieldset {
   text-align: center;
 }
 
+#hero {
+  height: 100px;
+  color: darkred;
+  list-style-type: none;
+  background-image: url("media/backgrounds/heroboard.png");
+  background-size: 300px;
+  padding-top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  margin-right: 28px;
+  color: black;
+  text-align: center;
+}
+
 #store1, #store2, #store3, #store4, #store5, #store6, #store7, #store8, #store9, #store10, #store11, #store12, #store13, #store14 {
   height: 100px;
   color: darkred;
