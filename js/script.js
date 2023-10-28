@@ -696,8 +696,8 @@ function resetGame() {
     minercats = 0;
     alchemistcats = 0;
     astronautcats = 0;
-    catpriest = 0;
-    catmage = 0;
+    priestcats = 0;
+    magecats = 0;
     gatekeepercats = 0;
     anticats = 0;
     luckycats = 0;
