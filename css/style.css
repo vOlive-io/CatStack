@@ -120,6 +120,13 @@ fieldset {
   margin: auto;
 }
 
+#adpoplit {
+  width: 75px;
+  height: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 #adgold {
   width: 90px;
   height: 70px;
