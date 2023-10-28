@@ -2278,15 +2278,16 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-normalcatbuy()
-farmercatbuy()
-minercatbuy()
-workercatbuy()
-bankercatbuy()
-alchemistcatbuy()
-astronautcatbuy()
-priestcatbuy()
-magecatbuy()
+//cost insurance
+let displayCost1 = cost1;
+for (let i = suffixes.length - 1; i >= 1; i--) {
+  const limit = Math.pow(10, i * 3);
+  if (cost1 >= limit) {
+    displayCost1 = (cost1 / limit).toFixed(1) + suffixes[i];
+    break;
+  }
+}
+rack.innerHTML = " $" + displayCost1;
 
 
 
