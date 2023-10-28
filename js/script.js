@@ -2331,6 +2331,22 @@ onAuthStateChanged(auth, (user) => {
 // console.log(functionNames);
 */
 
+
+
+
+normalcatbuy()
+farmercatbuy()
+minercatbuy()
+workercatbuy()
+bankercatbuy()
+alchemistcatbuy()
+astronautcatbuy()
+priestcatbuy()
+magecatbuy()
+
+
+
+
 window.startgame = startgame;
 window.play = play;
 window.loadshop = loadshop;
