@@ -2465,7 +2465,6 @@ window.goldencats = goldencats;
 window.purch = purch;
 window.allow = allow;
 window.poplits = poplits;
-window.confirmation = confirmation;
 window.game = game;
 window.allFunctions = allFunctions;
 window.allFunctions = allFunctions;
