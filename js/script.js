@@ -2506,4 +2506,3 @@ window.poplitSelect = poplitSelect;
 window.poplitLevel = poplitLevel;
 window.earnedLevel = earnedLevel;
 window.resetGame = resetGame;
-window.catpriest = catpriest;
