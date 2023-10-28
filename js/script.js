@@ -1946,7 +1946,7 @@ function showUpgradeIns() {
 }
 
 
-
+/*
 
 function crestPrism() {
   document.getElementById("poplitSelect").style.display = "block";
@@ -2001,7 +2001,7 @@ function crestKill() {
   store6.style.backgroundImage = "url('css/media/backgrounds/red.png')";
   game.style.border = "#ff1100 10px groove";
 }
-
+*/
 
 let usedSophie = false;
 let usedDev = false;
