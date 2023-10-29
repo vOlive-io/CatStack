@@ -1274,7 +1274,7 @@ function magecatbuy() {
         break;
       }
     }
-    rackEight.innerHTML = " $" + displayCost8;
+    rackNine.innerHTML = " $" + displayCost9;
     printerName.innerHTML = "You have $" + displayCount;
     tit.innerHTML = displayCount + " Cats - Catstack";
     format();
