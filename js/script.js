@@ -48,6 +48,7 @@ function startgame() {
   document.getElementById("shop").style.display = "block";
   document.getElementById("store1").style.display = "block";
   document.getElementById("show").style.display = "none";
+  alert("Hello! It's Olive here, this game is still under development and needs some help! If you see a bug please send it to olive.ascani@gmail.com. I will fix it and you will get a coupon code. But I my not get to you very soon, remember I go to school too! Have fun playing CatStack!")
   setInterval(idle, 1);
 }
 function loadshop() {
