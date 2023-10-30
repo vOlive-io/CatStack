@@ -48,7 +48,7 @@ function startgame() {
   document.getElementById("shop").style.display = "block";
   document.getElementById("store1").style.display = "block";
   document.getElementById("show").style.display = "none";
-  alert("Hello! It's Olive here, this game is still under development and needs some help! If you see a bug please send it to olive.ascani@gmail.com. I will fix it and you will get a coupon code. But I my not get to you very soon, remember I go to school too! Have fun playing CatStack!")
+  alert("Hello! It's Olive here, this game is still under development and needs some help! If you see a bug please send it to olive.ascani@gmail.com. I will fix it and you will get a coupon code. But I might not get to you very soon, remember I go to school too! Have fun playing CatStack!")
   setInterval(idle, 1);
 }
 function loadshop() {
@@ -2288,8 +2288,8 @@ if (popUnlocked=true) {
 }
 
 function buypop() {
-  if (goldgencats < popcost) { }
-  if (goldgencats >= popcost) {
+  if (goldencats < popcost) { }
+  if (goldencats >= popcost) {
     goldgencats -= popcost;
     popUnlocked= true;
     document.getElementById("poplitSelect").style.display = "block";
