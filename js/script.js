@@ -1374,6 +1374,7 @@ window.onload = function () {
     usedSophie = savedData.usedSophie || false;
     usedDev = savedData.usedDev || false;
     heros = savedData.heros || 0;
+    popUnlocked = savedData.popUnlocked || false;
 
   }
 };
@@ -1440,6 +1441,7 @@ setInterval(function () {
     usedSophie: usedSophie,
     usedDev: usedDev,
     heros: heros,
+    popUnlocked, popUnlocked,
   };
   localStorage.setItem('savedData', JSON.stringify(data));
 }, 1000);
@@ -2277,21 +2279,26 @@ onAuthStateChanged(auth, (user) => {
 
 
 
+var popcost = 100;
+var popUnlocked = false;
 
-//cost insurance
-let displayCost1 = cost1;
-for (let i = suffixes.length - 1; i >= 1; i--) {
-  const limit = Math.pow(10, i * 3);
-  if (cost1 >= limit) {
-    displayCost1 = (cost1 / limit).toFixed(1) + suffixes[i];
-    break;
+if (popUnlocked=true) {
+     document.getElementById("poplitSelect").style.display = "block"; 
+}
+
+function buypop() {
+  if (goldgencats < popcost) { }
+  if (goldgencats >= popcost) {
+    goldgencats -= popcost;
+    popUnlocked= true;
+    document.getElementById("poplitSelect").style.display = "block";
   }
 }
-rack.innerHTML = " $" + displayCost1;
 
 
-
-
+window.popcost = popcost;
+window.popUnlocked = popUnlocked;
+window.buypop = buypop;
 window.startgame = startgame;
 window.play = play;
 window.loadshop = loadshop;
