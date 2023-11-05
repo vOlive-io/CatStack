@@ -681,3 +681,7 @@ input ~ .tab {          /*  line between tab */
   visibility: visible;
   opacity: 1;
 }
+
+.bg-white  {
+  background: #ffffff
+}
