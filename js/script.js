@@ -2137,7 +2137,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Send the token to your server for processing
       const tokenData = { token: token.id };
       // Replace with your server endpoint for payment processing
-      fetch('https://cats-buy.cendrive.com/create-payment-intent-500000-kit-coins', {
+      fetch('https://cats.cendrive.com/create-payment-intent-500000-kit-coins', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
