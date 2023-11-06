@@ -835,7 +835,7 @@ function exe() {
 
 
 function timer() {
-  const countdownDate = new Date('November 1, 2023 00:00:00').getTime();
+  const countdownDate = new Date('January 1, 2023 00:00:00').getTime();
   const now = new Date().getTime();
   const distance = countdownDate - now;
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
