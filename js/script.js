@@ -816,6 +816,25 @@ function ad3() {
   }, 1000); // interval set to 1000ms or 1 second
 }
 
+function ad4() {
+  document.getElementById("game").style.display = "none";
+  document.getElementById("ad4").style.display = "block";
+  document.getElementById("timeleft4").style.display = "flex";
+  let timeLeft = 29; // 60 seconds
+  let timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      document.getElementById("exe4").style.display = "flex";
+      document.getElementById("timeleft4").style.display = "none";
+      timeleft3.innerHTML = "30s";
+    } else {
+      let seconds = Math.floor(timeLeft);
+      timeleft3.innerHTML = " " + seconds + "s";
+      timeLeft -= 1;
+    }
+  }, 1000); // interval set to 1000ms or 1 second
+}
+
 function exe() {
   goldencats = goldencats + 1;
   document.getElementById("ad1").style.display = "none";
@@ -827,6 +846,9 @@ function exe() {
   document.getElementById("ad3").style.display = "none";
   document.getElementById("timeleft3").style.display = "none";
   document.getElementById("exe3").style.display = "none";
+  document.getElementById("ad4").style.display = "none";
+  document.getElementById("timeleft4").style.display = "none";
+  document.getElementById("exe4").style.display = "none";
   document.getElementById("game").style.display = "block";
   document.getElementById("show").style.display = "flex";
 }
