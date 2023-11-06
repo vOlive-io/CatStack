@@ -76,17 +76,17 @@ fieldset {
 
 /* SHOP  //
 ////////////////////////////*/
-#ad1, #ad2, #ad3 {
+#ad1, #ad2, #ad3, #ad4 {
   display: none;
   width: 400px;
   height: 400px;
 }
-#ad1 img, #ad2 img, #ad3 img{
+#ad1 img, #ad2 img, #ad3 img, #ad3 img {
   width: 400px;
   height: 400px;
 }
 
-#timeleft1, #timeleft2, #timeleft3 {
+#timeleft1, #timeleft2, #timeleft3, #timeleft4 {
   color: pink;
   font-size: 15px;
   position: fixed;
@@ -99,7 +99,7 @@ fieldset {
   display: none;
 }
 
-#exe1, #exe2, #exe3 {
+#exe1, #exe2, #exe3, #exe4 {
   color: pink;
   font-size: 15px;
   position: fixed;
