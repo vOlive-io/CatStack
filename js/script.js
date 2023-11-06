@@ -2287,7 +2287,7 @@ var popUnlocked = 0;
 function buypop() {
   if (goldencats < popcost) { }
   if (goldencats >= popcost) {
-    goldgencats -= popcost;
+    goldencats -= popcost;
     document.getElementById("poplitSelect").style.display = "block";
     document.getElementById("popupPop").style.display = "none";
   }
