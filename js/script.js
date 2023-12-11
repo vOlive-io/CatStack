@@ -24,8 +24,8 @@ function play() {
       break;
     }
   }
-  printerName.innerHTML = "You have $" + displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
+  printerName.innerText = "You have $" + displayCount;
+  tit.innerText = displayCount + " Cats - Catstack";
   checkAchievements();
   format();
 }
@@ -780,10 +780,10 @@ function ad1() {
       clearInterval(timer);
       document.getElementById("exe1").style.display = "flex";
       document.getElementById("timeleft1").style.display = "none";
-      timeleft1.innerHTML = "30s";
+      timeleft1.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
-      timeleft1.innerHTML = " " + seconds + "s";
+      timeleft1.innerText = " " + seconds + "s";
       timeLeft -= 1;
     }
   }, 1000); // interval set to 1000ms or 1 second
@@ -799,10 +799,10 @@ function ad2() {
       clearInterval(timer);
       document.getElementById("exe2").style.display = "flex";
       document.getElementById("timeleft2").style.display = "none";
-      timeleft2.innerHTML = "30s";
+      timeleft2.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
-      timeleft2.innerHTML = " " + seconds + "s";
+      timeleft2.innerText = " " + seconds + "s";
       timeLeft -= 1;
     }
   }, 1000); // interval set to 1000ms or 1 second
@@ -818,10 +818,10 @@ function ad3() {
       clearInterval(timer);
       document.getElementById("exe3").style.display = "flex";
       document.getElementById("timeleft3").style.display = "none";
-      timeleft3.innerHTML = "30s";
+      timeleft3.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
-      timeleft3.innerHTML = " " + seconds + "s";
+      timeleft3.innerText = " " + seconds + "s";
       timeLeft -= 1;
     }
   }, 1000); // interval set to 1000ms or 1 second
@@ -837,10 +837,10 @@ function ad4() {
       clearInterval(timer);
       document.getElementById("exe4").style.display = "flex";
       document.getElementById("timeleft4").style.display = "none";
-      timeleft3.innerHTML = "30s";
+      timeleft3.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
-      timeleft3.innerHTML = " " + seconds + "s";
+      timeleft3.innerText = " " + seconds + "s";
       timeLeft -= 1;
     }
   }, 1000); // interval set to 1000ms or 1 second
@@ -876,7 +876,7 @@ function timer() {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("shoptime").innerHTML = `(Ends In: ${days}:${hours}:${minutes}:${seconds})`;
+  document.getElementById("shoptime").innerText = `(Ends In: ${days}:${hours}:${minutes}:${seconds})`;
 }
 
 // Call the function every second
@@ -886,7 +886,7 @@ function timer() {
 function format() {
   if (count < 1000) {
     let roundCount = Math.round(count);
-    printerName.innerHTML = "You have $" + roundCount;
+    printerName.innerText = "You have $" + roundCount;
     document.title = roundCount + " Cats - Catstack"; // Set the title based on the current count
   } else {
     let suffixIndex = Math.floor(Math.log10(count) / 3);
@@ -897,65 +897,65 @@ function format() {
     } else {
       displayCount = displayCount.toFixed(1);
     }
-    printerName.innerHTML = "You have $" + displayCount + suffix;
+    printerName.innerText = "You have $" + displayCount + suffix;
     document.title = displayCount + suffix + " Cats - Catstack"; // Set the title based on the current count
   }
 }
 
 function update() {
 
-  goldtext.innerHTML = goldencats;
-  adsleft.innerHTML = allow;
+  goldtext.innerText = goldencats;
+  adsleft.innerText = allow;
   if (normalcats > 0) {
     document.getElementById("store2").style.display = "block";
   }
-  normalcat.innerHTML = " Cats (" + normalcats + ")";
+  normalcat.innerText = " Cats (" + normalcats + ")";
   if (farmercats > 0) {
     document.getElementById("store2").style.display = "block";
     document.getElementById("store3").style.display = "block";
   }
-  farmercat.innerHTML = " Farmer Cats (" + farmercats + ")";
+  farmercat.innerText = " Farmer Cats (" + farmercats + ")";
   if (minercats > 0) {
     document.getElementById("store3").style.display = "block";
     document.getElementById("store4").style.display = "block";
   }
-  minercat.innerHTML = " Miner Cats (" + minercats + ")";
+  minercat.innerText = " Miner Cats (" + minercats + ")";
   if (workercats > 0) {
     document.getElementById("store4").style.display = "block";
     document.getElementById("store5").style.display = "block";
   }
-  workercat.innerHTML = " Worker Cats (" + workercats + ")";
+  workercat.innerText = " Worker Cats (" + workercats + ")";
   if (bankercats > 0) {
     document.getElementById("store5").style.display = "block";
     document.getElementById("store6").style.display = "block";
   }
-  bankercat.innerHTML = " Banker Cats (" + bankercats + ")";
+  bankercat.innerText = " Banker Cats (" + bankercats + ")";
   if (alchemistcats > 0) {
     document.getElementById("store6").style.display = "block";
     document.getElementById("store7").style.display = "block";
     document.getElementById("lab").style.display = "block";
   }
-  alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
+  alchemistcat.innerText = " Alchemist Cats (" + alchemistcats + ")";
   if (astronautcats > 0) {
     document.getElementById("store7").style.display = "block";
     document.getElementById("store8").style.display = "block";
   }
-  astronautcat.innerHTML = " Astronaut Cats (" + astronautcats + ")";
+  astronautcat.innerText = " Astronaut Cats (" + astronautcats + ")";
   if (priestcats > 0) {
     document.getElementById("store8").style.display = "block";
     document.getElementById("store9").style.display = "block";
   }
-  priestcat.innerHTML = " Priest Cats (" + priestcats + ")";
+  priestcat.innerText = " Priest Cats (" + priestcats + ")";
   if (magecats > 0) {
     document.getElementById("store9").style.display = "block";
     document.getElementById("store10").style.display = "block";
   }
-  magecat.innerHTML = " Mage Cats (" + magecats + ")";
+  magecat.innerText = " Mage Cats (" + magecats + ")";
   if (gatekeepercats > 0) {
     document.getElementById("store10").style.display = "block";
     document.getElementById("store11").style.display = "block";
   }
-  gatekeepercat.innerHTML = " Mage Cats (" + magecats + ")";
+  gatekeepercat.innerText = " Mage Cats (" + magecats + ")";
   if (anticats > 0) {
     document.getElementById("store11").style.display = "block";
   }
@@ -991,7 +991,7 @@ function idle(numbers = 1) {
       break;
     }
   }
-  printerName.innerHTML = "You have $" + displayCount;
+  printerName.innerText = "You have $" + displayCount;
   format();
 }
 
@@ -1012,7 +1012,7 @@ function normalcatbuy() {
     cost1 = Math.round(cost1 * 1.2);
     console.log(cost1);
     document.getElementById("store2").style.display = "block";
-    normalcat.innerHTML = " Cats (" + normalcats + ")";
+    normalcat.innerText = " Cats (" + normalcats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1031,9 +1031,9 @@ function normalcatbuy() {
         break;
       }
     }
-    rack.innerHTML = " $" + displayCost1;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rack.innerText = " $" + displayCost1;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1047,7 +1047,7 @@ function farmercatbuy() {
     cost2 = Math.round(cost2 * 1.2);
     console.log(cost2);
     document.getElementById("store3").style.display = "block";
-    farmercat.innerHTML = " Farmer Cats (" + farmercats + ")";
+    farmercat.innerText = " Farmer Cats (" + farmercats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1066,9 +1066,9 @@ function farmercatbuy() {
         break;
       }
     }
-    rackTwo.innerHTML = " $" + displayCost2;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackTwo.innerText = " $" + displayCost2;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1082,7 +1082,7 @@ function minercatbuy() {
     cost3 = Math.round(cost3 * 1.2);
     console.log(cost3);
     document.getElementById("store4").style.display = "block";
-    minercat.innerHTML = " Miner Cats (" + minercats + ")";
+    minercat.innerText = " Miner Cats (" + minercats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1101,9 +1101,9 @@ function minercatbuy() {
         break;
       }
     }
-    rackThree.innerHTML = " $" + displayCost3;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackThree.innerText = " $" + displayCost3;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1118,7 +1118,7 @@ function workercatbuy() {
     cost4 = Math.round(cost4 * 1.2);
     console.log(cost4);
     document.getElementById("store5").style.display = "block";
-    workercat.innerHTML = " Worker Cats (" + workercats + ")";
+    workercat.innerText = " Worker Cats (" + workercats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1137,9 +1137,9 @@ function workercatbuy() {
         break;
       }
     }
-    rackFour.innerHTML = " $" + displayCost4;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackFour.innerText = " $" + displayCost4;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1153,7 +1153,7 @@ function bankercatbuy() {
     cost5 = Math.round(cost5 * 1.2);
     console.log(cost5)
     document.getElementById("store6").style.display = "block";
-    bankercat.innerHTML = " Banker Cats (" + bankercats + ")";
+    bankercat.innerText = " Banker Cats (" + bankercats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1172,9 +1172,9 @@ function bankercatbuy() {
         break;
       }
     }
-    rackFive.innerHTML = " $" + displayCost5;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackFive.innerText = " $" + displayCost5;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1188,7 +1188,7 @@ function alchemistcatbuy() {
     cost6 = Math.round(cost6 * 1.2);
     console.log(cost6)
     document.getElementById("lab").style.display = "block";
-    alchemistcat.innerHTML = " Alchemist Cats (" + alchemistcats + ")";
+    alchemistcat.innerText = " Alchemist Cats (" + alchemistcats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1207,9 +1207,9 @@ function alchemistcatbuy() {
         break;
       }
     }
-    rackSix.innerHTML = " $" + displayCost6;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackSix.innerText = " $" + displayCost6;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1222,7 +1222,7 @@ function astronautcatbuy() {
     astronautcats = astronautcats + 1;
     cost7 = Math.round(cost7 * 1.2);
     console.log(cost7)
-    astronautcat.innerHTML = "Astronaut Cats (" + astronautcats + ")";
+    astronautcat.innerText = "Astronaut Cats (" + astronautcats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1241,9 +1241,9 @@ function astronautcatbuy() {
         break;
       }
     }
-    rackSeven.innerHTML = " $" + displayCost7;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackSeven.innerText = " $" + displayCost7;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1256,7 +1256,7 @@ function priestcatbuy() {
     priestcats = priestcats + 1;
     cost8 = Math.round(cost8 * 1.2);
     console.log(cost8)
-    priestcat.innerHTML = "Priest Cats (" + priestcats + ")";
+    priestcat.innerText = "Priest Cats (" + priestcats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1275,9 +1275,9 @@ function priestcatbuy() {
         break;
       }
     }
-    rackEight.innerHTML = " $" + displayCost8;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackEight.innerText = " $" + displayCost8;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1290,7 +1290,7 @@ function magecatbuy() {
     magecats = magecats + 1;
     cost9 = Math.round(cost9 * 1.2);
     console.log(cost9)
-    magecat.innerHTML = "Mage Cats (" + magecats + ")";
+    magecat.innerText = "Mage Cats (" + magecats + ")";
     //count insurance
     let displayCount = count;
     for (let i = suffixes.length - 1; i >= 1; i--) {
@@ -1309,9 +1309,9 @@ function magecatbuy() {
         break;
       }
     }
-    rackNine.innerHTML = " $" + displayCost9;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    rackNine.innerText = " $" + displayCost9;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
     format();
   }
 }
@@ -1340,7 +1340,7 @@ function checkScreenSize() {
     document.getElementById('game').style.display = 'none';
     document.getElementById('sizeCom').style.display = 'block';
     document.getElementById('sizeCom').style.color = 'red';
-    size.innerHTML = screenSize + "px ";
+    size.innerText = screenSize + "px ";
   } else {
     document.getElementById('sizeCom').style.display = 'none';
   }
@@ -1654,7 +1654,7 @@ function changeCoinImage() {
       break;
   }
   let poplitImage = "<img src='" + coinImage + "' class='coin-image'>";
-  coin.innerHTML = poplitImage;
+  coin.innerText = poplitImage;
 }
 
 
@@ -1771,9 +1771,9 @@ function buyClickPower() {
         break;
       }
     }
-    powerDub.innerHTML = " $" + displayClickCost;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    powerDub.innerText = " $" + displayClickCost;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
   }
 }
 
@@ -1834,9 +1834,9 @@ function buyInsPower() {
         break;
       }
     }
-    idleDub.innerHTML = " $" + displayInsCost;
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
+    idleDub.innerText = " $" + displayInsCost;
+    printerName.innerText = "You have $" + displayCount;
+    tit.innerText = displayCount + " Cats - Catstack";
   }
 }
 
@@ -1925,19 +1925,19 @@ function showUpgradesClick() {
       break;
     }
   }
-  printerName.innerHTML = "You have $" + displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
+  printerName.innerText = "You have $" + displayCount;
+  tit.innerText = displayCount + " Cats - Catstack";
   let timeLeft = 5; // 20 minutes in seconds
   let labResElem = document.getElementById("labRes");
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
-      labRes.innerHTML = "Research for $" + displayResCost;
+      labRes.innerText = "Research for $" + displayResCost;
       document.getElementById("upgradesClick").style.display = "block";
     } else {
       let minutes = Math.floor(timeLeft / 60);
       let seconds = timeLeft % 60;
-      labResElem.innerHTML = "Time left: " + minutes + "m " + seconds + "s";
+      labResElem.innerText = "Time left: " + minutes + "m " + seconds + "s";
       timeLeft--;
     }
   }, 1000); // 1 second interval
@@ -1964,19 +1964,19 @@ function showUpgradeIns() {
       break;
     }
   }
-  printerName.innerHTML = "You have $" + displayCount;
-  tit.innerHTML = displayCount + " Cats - Catstack";
+  printerName.innerText = "You have $" + displayCount;
+  tit.innerText = displayCount + " Cats - Catstack";
   let timeLeft = 5; // 20 minutes in seconds
   let labResElem = document.getElementById("labRes");
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
-      labRes.innerHTML = "Research for $" + displayResCost;
+      labRes.innerText = "Research for $" + displayResCost;
       document.getElementById("upgradesIdle").style.display = "block";
     } else {
       let minutes = Math.floor(timeLeft / 60);
       let seconds = timeLeft % 60;
-      labResElem.innerHTML = "Time left: " + minutes + "m " + seconds + "s";
+      labResElem.innerText = "Time left: " + minutes + "m " + seconds + "s";
       timeLeft--;
     }
   }, 1000); // 1 second interval
