@@ -2450,7 +2450,6 @@ window.goldencats = goldencats;
 window.purch = purch;
 window.allow = allow;
 window.poplits = poplits;
-window.game = game;
 window.suffixes = suffixes;
 window.clickEarned = clickEarned;
 window.doubleClickEarned = doubleClickEarned;
