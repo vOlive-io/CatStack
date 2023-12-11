@@ -1,13 +1,13 @@
 
-let normalcat = document.createElementById("normalcat");
-let farmercat = document.createElementById("farmercat");
-let minercat = document.createElementById("minercat");
-let bankercat = document.createElementById("bankercat");
-let alchemistcat = document.createElementById("alchemistcat");
-let astronautcat = document.createElementById("astronautcat");
-let priestcat = document.createElementById("priestcat");
-let magecat = document.createElementById("magecat");
-let gatekeepercat = document.createElementById("gatekeepercat");
+let normalcat = document.getElementById("normalcat");
+let farmercat = document.getElementById("farmercat");
+let minercat = document.getElementById("minercat");
+let bankercat = document.getElementById("bankercat");
+let alchemistcat = document.getElementById("alchemistcat");
+let astronautcat = document.getElementById("astronautcat");
+let priestcat = document.getElementById("priestcat");
+let magecat = document.getElementById("magecat");
+let gatekeepercat = document.getElementById("gatekeepercat");
 
 const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
