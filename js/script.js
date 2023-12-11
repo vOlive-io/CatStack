@@ -1039,7 +1039,6 @@ function normalcatbuy() {
 }
 //////////////////     FARMER CAT     ///////////////////  
 function farmercatbuy() {
-  let farmercat = document.createElementById("farmercat");
   if (count < cost2) { }
   if (count >= cost2) {
     count -= cost2;
