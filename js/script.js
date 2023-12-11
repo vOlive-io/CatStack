@@ -1,23 +1,34 @@
+
+let normalcat = document.createElementById("normalcat");
+let farmercat = document.createElementById("farmercat");
+let minercat = document.createElementById("minercat");
+let bankercat = document.createElementById("bankercat");
+let alchemistcat = document.createElementById("alchemistcat");
+let astronautcat = document.createElementById("astronautcat");
+let priestcat = document.createElementById("priestcat");
+let magecat = document.createElementById("magecat");
+let gatekeepercat = document.createElementById("gatekeepercat");
+
 const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
- function  play() {
-    count += num;
-    clicks += num;
-    let displayCount = count;
-    for (let i = suffixes.length - 1; i >= 1; i--) {
-      const limit = Math.pow(10, i * 3);
-      if (count >= limit) {
-        displayCount = (count / limit).toFixed(1) + suffixes[i];
-        break;
-      }
+function play() {
+  count += num;
+  clicks += num;
+  let displayCount = count;
+  for (let i = suffixes.length - 1; i >= 1; i--) {
+    const limit = Math.pow(10, i * 3);
+    if (count >= limit) {
+      displayCount = (count / limit).toFixed(1) + suffixes[i];
+      break;
     }
-    printerName.innerHTML = "You have $" + displayCount;
-    tit.innerHTML = displayCount + " Cats - Catstack";
-    checkAchievements();
-    format();
   }
+  printerName.innerHTML = "You have $" + displayCount;
+  tit.innerHTML = displayCount + " Cats - Catstack";
+  checkAchievements();
+  format();
+}
 
 
 ///////////////////////////////////
@@ -892,6 +903,7 @@ function format() {
 }
 
 function update() {
+
   goldtext.innerHTML = goldencats;
   adsleft.innerHTML = allow;
   if (normalcats > 0) {
@@ -1027,6 +1039,7 @@ function normalcatbuy() {
 }
 //////////////////     FARMER CAT     ///////////////////  
 function farmercatbuy() {
+  let farmercat = document.createElementById("farmercat");
   if (count < cost2) { }
   if (count >= cost2) {
     count -= cost2;
