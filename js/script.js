@@ -760,7 +760,7 @@ function showAdd() {
     selectedAd();
     purch = purch + 1;
     allow = allow - 1;
-    document.getElementById("shop").style.display = "none";
+    document.getElementById("shop").style.visibility = "hidden";
     setTimeout(() => {
       canRun = true;
     }, 5000); // the cooldown time is set to 5000ms (5 seconds)
@@ -772,15 +772,15 @@ function showAdd() {
 
 
 function ad1() {
-  document.getElementById("game").style.display = "none";
-  document.getElementById("ad1").style.display = "block";
-  document.getElementById("timeleft1").style.display = "flex";
+  document.getElementById("game").style.visibility = "hidden";
+  document.getElementById("ad1").style.visibility = "hidden";
+  document.getElementById("timeleft1").style.visibility = "visible";
   let timeLeft = 29; // 60 seconds
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
-      document.getElementById("exe1").style.display = "flex";
-      document.getElementById("timeleft1").style.display = "none";
+      document.getElementById("exe1").style.visibility = "visible";
+      document.getElementById("timeleft1").style.visibility = "hidden";
       timeleft1.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
@@ -791,15 +791,15 @@ function ad1() {
 }
 
 function ad2() {
-  document.getElementById("game").style.display = "none";
-  document.getElementById("ad2").style.display = "block";
-  document.getElementById("timeleft2").style.display = "flex";
+  document.getElementById("game").style.visibility = "hidden";
+  document.getElementById("ad2").style.visibility = "hidden";
+  document.getElementById("timeleft2").style.visibility = "visible";
   let timeLeft = 29; // 60 seconds
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
-      document.getElementById("exe2").style.display = "flex";
-      document.getElementById("timeleft2").style.display = "none";
+      document.getElementById("exe2").style.visibility = "visible";
+      document.getElementById("timeleft2").style.visibility = "hidden";
       timeleft2.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
@@ -810,15 +810,15 @@ function ad2() {
 }
 
 function ad3() {
-  document.getElementById("game").style.display = "none";
-  document.getElementById("ad3").style.display = "block";
-  document.getElementById("timeleft3").style.display = "flex";
+  document.getElementById("game").style.visibility = "hidden";
+  document.getElementById("ad3").style.visibility = "hidden";
+  document.getElementById("timeleft3").style.visibility = "visible";
   let timeLeft = 29; // 60 seconds
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
-      document.getElementById("exe3").style.display = "flex";
-      document.getElementById("timeleft3").style.display = "none";
+      document.getElementById("exe3").style.visibility = "visible";
+      document.getElementById("timeleft3").style.visibility = "hidden";
       timeleft3.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
@@ -829,15 +829,15 @@ function ad3() {
 }
 
 function ad4() {
-  document.getElementById("game").style.display = "none";
-  document.getElementById("ad4").style.display = "block";
-  document.getElementById("timeleft4").style.display = "flex";
+  document.getElementById("game").style.visibility = "hidden";
+  document.getElementById("ad4").style.visibility = "hidden";
+  document.getElementById("timeleft4").style.visibility = "visible";
   let timeLeft = 29; // 60 seconds
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
-      document.getElementById("exe4").style.display = "flex";
-      document.getElementById("timeleft4").style.display = "none";
+      document.getElementById("exe4").style.visibility = "visible";
+      document.getElementById("timeleft4").style.visibility = "hidden";
       timeleft3.innerText = "30s";
     } else {
       let seconds = Math.floor(timeLeft);
@@ -849,20 +849,20 @@ function ad4() {
 
 function exe() {
   goldencats = goldencats + 1;
-  document.getElementById("ad1").style.display = "none";
-  document.getElementById("timeleft1").style.display = "none";
-  document.getElementById("exe1").style.display = "none";
-  document.getElementById("ad2").style.display = "none";
-  document.getElementById("timeleft2").style.display = "none";
-  document.getElementById("exe2").style.display = "none";
-  document.getElementById("ad3").style.display = "none";
-  document.getElementById("timeleft3").style.display = "none";
-  document.getElementById("exe3").style.display = "none";
-  document.getElementById("ad4").style.display = "none";
-  document.getElementById("timeleft4").style.display = "none";
-  document.getElementById("exe4").style.display = "none";
-  document.getElementById("game").style.display = "block";
-  document.getElementById("show").style.display = "flex";
+  document.getElementById("ad1").style.visibility = "hidden";
+  document.getElementById("timeleft1").style.visibility = "hidden";
+  document.getElementById("exe1").style.visibility = "hidden";
+  document.getElementById("ad2").style.visibility = "hidden";
+  document.getElementById("timeleft2").style.visibility = "hidden";
+  document.getElementById("exe2").style.visibility = "hidden";
+  document.getElementById("ad3").style.visibility = "hidden";
+  document.getElementById("timeleft3").style.visibility = "hidden";
+  document.getElementById("exe3").style.visibility = "hidden";
+  document.getElementById("ad4").style.visibility = "hidden";
+  document.getElementById("timeleft4").style.visibility = "hidden";
+  document.getElementById("exe4").style.visibility = "hidden";
+  document.getElementById("game").style.visibility = "hidden";
+  document.getElementById("show").style.visibility = "visible";
 }
 
 
@@ -908,57 +908,57 @@ function update() {
   goldtext.innerText = goldencats;
   adsleft.innerText = allow;
   if (normalcats > 0) {
-    document.getElementById("store2").style.display = "block";
+    document.getElementById("store2").style.visibility = "hidden";
   }
   normalcat.innerText = " Cats (" + normalcats + ")";
   if (farmercats > 0) {
-    document.getElementById("store2").style.display = "block";
-    document.getElementById("store3").style.display = "block";
+    document.getElementById("store2").style.visibility = "hidden";
+    document.getElementById("store3").style.visibility = "hidden";
   }
   farmercat.innerText = " Farmer Cats (" + farmercats + ")";
   if (minercats > 0) {
-    document.getElementById("store3").style.display = "block";
-    document.getElementById("store4").style.display = "block";
+    document.getElementById("store3").style.visibility = "hidden";
+    document.getElementById("store4").style.visibility = "hidden";
   }
   minercat.innerText = " Miner Cats (" + minercats + ")";
   if (workercats > 0) {
-    document.getElementById("store4").style.display = "block";
-    document.getElementById("store5").style.display = "block";
+    document.getElementById("store4").style.visibility = "hidden";
+    document.getElementById("store5").style.visibility = "hidden";
   }
   workercat.innerText = " Worker Cats (" + workercats + ")";
   if (bankercats > 0) {
-    document.getElementById("store5").style.display = "block";
-    document.getElementById("store6").style.display = "block";
+    document.getElementById("store5").style.visibility = "hidden";
+    document.getElementById("store6").style.visibility = "hidden";
   }
   bankercat.innerText = " Banker Cats (" + bankercats + ")";
   if (alchemistcats > 0) {
-    document.getElementById("store6").style.display = "block";
-    document.getElementById("store7").style.display = "block";
-    document.getElementById("lab").style.display = "block";
+    document.getElementById("store6").style.visibility = "hidden";
+    document.getElementById("store7").style.visibility = "hidden";
+    document.getElementById("lab").style.visibility = "hidden";
   }
   alchemistcat.innerText = " Alchemist Cats (" + alchemistcats + ")";
   if (astronautcats > 0) {
-    document.getElementById("store7").style.display = "block";
-    document.getElementById("store8").style.display = "block";
+    document.getElementById("store7").style.visibility = "hidden";
+    document.getElementById("store8").style.visibility = "hidden";
   }
   astronautcat.innerText = " Astronaut Cats (" + astronautcats + ")";
   if (priestcats > 0) {
-    document.getElementById("store8").style.display = "block";
-    document.getElementById("store9").style.display = "block";
+    document.getElementById("store8").style.visibility = "hidden";
+    document.getElementById("store9").style.visibility = "hidden";
   }
   priestcat.innerText = " Priest Cats (" + priestcats + ")";
   if (magecats > 0) {
-    document.getElementById("store9").style.display = "block";
-    document.getElementById("store10").style.display = "block";
+    document.getElementById("store9").style.visibility = "hidden";
+    document.getElementById("store10").style.visibility = "hidden";
   }
   magecat.innerText = " Mage Cats (" + magecats + ")";
   if (gatekeepercats > 0) {
-    document.getElementById("store10").style.display = "block";
-    document.getElementById("store11").style.display = "block";
+    document.getElementById("store10").style.visibility = "hidden";
+    document.getElementById("store11").style.visibility = "hidden";
   }
   gatekeepercat.innerText = " Mage Cats (" + magecats + ")";
   if (anticats > 0) {
-    document.getElementById("store11").style.display = "block";
+    document.getElementById("store11").style.visibility = "hidden";
   }
 }
 
@@ -1012,7 +1012,7 @@ function normalcatbuy() {
     normalcats = normalcats + 1;
     cost1 = Math.round(cost1 * 1.2);
     console.log(cost1);
-    document.getElementById("store2").style.display = "block";
+    document.getElementById("store2").style.visibility = "hidden";
     normalcat.innerText = " Cats (" + normalcats + ")";
     //count insurance
     let displayCount = count;
@@ -1047,7 +1047,7 @@ function farmercatbuy() {
     farmercats = farmercats + 1;
     cost2 = Math.round(cost2 * 1.2);
     console.log(cost2);
-    document.getElementById("store3").style.display = "block";
+    document.getElementById("store3").style.visibility = "hidden";
     farmercat.innerText = " Farmer Cats (" + farmercats + ")";
     //count insurance
     let displayCount = count;
@@ -1082,7 +1082,7 @@ function minercatbuy() {
     minercats = minercats + 1;
     cost3 = Math.round(cost3 * 1.2);
     console.log(cost3);
-    document.getElementById("store4").style.display = "block";
+    document.getElementById("store4").style.visibility = "hidden";
     minercat.innerText = " Miner Cats (" + minercats + ")";
     //count insurance
     let displayCount = count;
@@ -1118,7 +1118,7 @@ function workercatbuy() {
     workercats = workercats + 1;
     cost4 = Math.round(cost4 * 1.2);
     console.log(cost4);
-    document.getElementById("store5").style.display = "block";
+    document.getElementById("store5").style.visibility = "hidden";
     workercat.innerText = " Worker Cats (" + workercats + ")";
     //count insurance
     let displayCount = count;
@@ -1153,7 +1153,7 @@ function bankercatbuy() {
     bankercats = bankercats + 1;
     cost5 = Math.round(cost5 * 1.2);
     console.log(cost5)
-    document.getElementById("store6").style.display = "block";
+    document.getElementById("store6").style.visibility = "hidden";
     bankercat.innerText = " Banker Cats (" + bankercats + ")";
     //count insurance
     let displayCount = count;
@@ -1188,7 +1188,7 @@ function alchemistcatbuy() {
     alchemistcats = alchemistcats + 1;
     cost6 = Math.round(cost6 * 1.2);
     console.log(cost6)
-    document.getElementById("lab").style.display = "block";
+    document.getElementById("lab").style.visibility = "hidden";
     alchemistcat.innerText = " Alchemist Cats (" + alchemistcats + ")";
     //count insurance
     let displayCount = count;
@@ -1934,7 +1934,7 @@ function showUpgradesClick() {
     if (timeLeft <= 0) {
       clearInterval(timer);
       labRes.innerText = "Research for $" + displayResCost;
-      document.getElementById("upgradesClick").style.display = "block";
+      document.getElementById("upgradesClick").style.visibility = "hidden";
     } else {
       let minutes = Math.floor(timeLeft / 60);
       let seconds = timeLeft % 60;
@@ -1973,7 +1973,7 @@ function showUpgradeIns() {
     if (timeLeft <= 0) {
       clearInterval(timer);
       labRes.innerText = "Research for $" + displayResCost;
-      document.getElementById("upgradesIdle").style.display = "block";
+      document.getElementById("upgradesIdle").style.visibility = "hidden";
     } else {
       let minutes = Math.floor(timeLeft / 60);
       let seconds = timeLeft % 60;
@@ -2323,8 +2323,8 @@ function buypop() {
   if (goldencats < popcost) { }
   if (goldencats >= popcost) {
     goldencats -= popcost;
-    document.getElementById("poplitSelect").style.display = "block";
-    document.getElementById("popupPop").style.display = "none";
+    document.getElementById("poplitSelect").style.visibility = "hidden";
+    document.getElementById("popupPop").style.visibility = "hidden";
   }
 }
 
