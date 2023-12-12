@@ -69,7 +69,7 @@ function loadshop() {
 }
 function hideshop() {
   document.getElementById("shop").style.visibility = "hidden";
-  document.getElementById("show").style.visibility = "block";
+  document.getElementById("show").style.visibility = "visible";
 }
 
 
