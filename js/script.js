@@ -57,15 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
   select.addEventListener("change", getSelected);
 });
 function startgame() {
-  document.getElementById("shop").style.display = "block";
-  document.getElementById("store1").style.display = "block";
-  document.getElementById("show").style.display = "none";
+  document.getElementById("shop").style.visibility = "visible";
+  document.getElementById("store1").style.visibility = "visible";
+  document.getElementById("show").style.visibility = "hidden";
   alert("Hello! It's Olive here, this game is still under development and needs some help! If you see a bug please send it to olive.ascani@gmail.com. I will fix it and you will get a coupon code. But I might not get to you very soon, remember I go to school too! Have fun playing CatStack!")
   setInterval(idle, 1);
 }
 function loadshop() {
-  document.getElementById("shop").style.display = "block";
-  document.getElementById("show").style.display = "none";
+  document.getElementById("shop").style.visibility = "visible";
+  document.getElementById("show").style.visibility = "hidden";
 }
 function hideshop() {
   document.getElementById("shop").style.visibility = "hidden";
